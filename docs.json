@@ -23,8 +23,26 @@
           "faq"
         ]
       },
+      {"groups": [
+          {
+            "group": "User manual",
+            "pages": [
+              "user-manual"
+            ]
+          },
+          {
+            "group": "Endpoint examples",
+            "pages": [
+              "api-reference/endpoint/get",
+              "api-reference/endpoint/create",
+              "api-reference/endpoint/delete",
+              "api-reference/endpoint/webhook"
+            ]
+          }
+        ]
+      },
       {
-        "tab": "User-manul",
+        "tab": "User manual",
         "pages": [
           "index",
           "Plans & Pricing",
@@ -112,7 +130,6 @@
       "copy",
       "view",
       "chatgpt",
-      "google",
       "claude",
       "perplexity"
     ]
