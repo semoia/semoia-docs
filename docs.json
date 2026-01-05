@@ -1,18 +1,11 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "maple",
-  "name": "Semoia",
+  "theme": "mint",
+  "name": "Documentation",
   "colors": {
-    "primary": "#10B981",
-    "light": "#10B981",
-    "dark": "#34D399",
-    "anchors": {
-      "from": "#10B981",
-      "to": "#6EE7B7"
-    },
-    "background": {
-      "dark": "#020617"
-    }
+    "primary": "#ff0000",
+    "light": "#ffffff",
+    "dark": "#000000"
   },
   "modeToggle": {
     "default": "dark",
@@ -22,44 +15,65 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "Introduction",
+        "pages": [
+          "index",
+          "pricing",
+          "quickstart",
+          "faq"
+        ]
+      },
+      {
+        "tab": "User-manul",
+        "pages": [
+          "index",
+          "Plans & Pricing",
+          "Quickstart",
+          "FAQ"
+        ]
+      },
+      {
+        "tab": "Rules",
         "groups": [
           {
-            "group": "Getting started",
+            "group": "API documentation",
             "pages": [
-              "index",
-              "quickstart",
-              "development"
+              "api-reference/introduction"
             ]
           },
           {
-            "group": "Customization",
+            "group": "Endpoint examples",
             "pages": [
-              "essentials/settings",
-              "essentials/navigation"
-            ]
-          },
-          {
-            "group": "Writing content",
-            "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
-            ]
-          },
-          {
-            "group": "AI tools",
-            "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
+              "api-reference/endpoint/get",
+              "api-reference/endpoint/create",
+              "api-reference/endpoint/delete",
+              "api-reference/endpoint/webhook"
             ]
           }
         ]
       },
       {
-        "tab": "API reference",
+        "tab": "Use cases",
+        "groups": [
+          {
+            "group": "API documentation",
+            "pages": [
+              "api-reference/introduction"
+            ]
+          },
+          {
+            "group": "Endpoint examples",
+            "pages": [
+              "api-reference/endpoint/get",
+              "api-reference/endpoint/create",
+              "api-reference/endpoint/delete",
+              "api-reference/endpoint/webhook"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Changelog",
         "groups": [
           {
             "group": "API documentation",
@@ -78,21 +92,7 @@
           }
         ]
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
-    }
+    ]
   },
   "navbar": {
     "links": [
@@ -104,7 +104,7 @@
     "primary": {
       "type": "button",
       "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "href": "https://www.trysemoia.com"
     }
   },
   "contextual": {
@@ -112,18 +112,16 @@
       "copy",
       "view",
       "chatgpt",
+      "google",
       "claude",
-      "perplexity",
-      "mcp",
-      "cursor",
-      "vscode"
+      "perplexity"
     ]
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "x": "https://x.com/semoia",
+      "github": "https://github.com/semoia",
+      "linkedin": "https://linkedin.com/company/semoia"
     }
   }
 }
