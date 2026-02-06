@@ -1,30 +1,31 @@
 ---
 title: "Notebooks"
-description: "Your AI's Long-term Knowledge System"
+description: "Your AI's Long-term Memory"
 ---
 
-Notebooks are structured "smart ledgers" designed to preserve critical information across multiple sessions. Think of a Notebook as a persistent manual that your AI can reference, learn from, and update intelligently.
+Notebooks are places where your AI saves important project details. Unlike a simple text file, a Notebook helps the AI "learn" and "remember" as your project grows.
 
-## Core Philosophy: Smart Merge
+## Smart Saving
 
-Unlike traditional text files, Semoia Notebooks are built for **evolution**. 
-
-When your AI "writes" to a notebook, it doesn't just append text; it performs a **Smart Merge**:
-1. **Structural Awareness**: The system parses Markdown headings (`#`, `##`) into nodes.
-2. **Delta Updates**: If the AI updates your `## API List`, other sections like `## Setup Guide` remain untouched, saving context window and preventing data loss.
-3. **Checkpoints**: Every update creates a new version, allowing you to track the growth of your project's knowledge over time.
+When your AI saves to a Notebook, it:
+1. **Organizes Automatically**: It uses headings to keep things in the right place.
+2. **Only Changes What's New**: It updates specific parts and keeps the rest safe.
+3. **Saves History**: It remembers old versions so you can go back if you need to.
 
 ## Notebook Tools
 
-- **`list_notebooks`**: Overview of all your knowledge repositories. Each has a unique ID for precise AI access.
-- **`create_notebook`**: Initialize a new space for a specific project (e.g., "Frontend Web", "Database Design").
-- **`read_notebook`**: The AI retrieves the latest checkpoint to ground itself in your project's current state.
-- **`write_notebook`**: The primary tool for structured recording. The AI "thinks" about the hierarchy as it saves.
-- **`search_notebooks`**: Leverages **Hybrid Search** (combining keywords and semantic meaning) to find specific logic or code snippets from a simple natural language query.
-- **`rollback_notebook`**: Built-in **Version Control**. Similar to `git revert`, this allows you to undo unwanted AI changes instantly.
+Your AI can use these simple tools:
 
-## Best Practices
+- **`list_notebooks`**: See all your notebooks.
+- **`create_notebook`**: Make a new notebook for a project.
+- **`read_notebook`**: Read the latest notes in a notebook.
+- **`write_notebook`**: Save new information or change existing notes.
+- **`search_notebooks`**: Find specific details just by asking a question.
+- **`rollback_notebook`**: Undo the last change if the AI made a mistake.
+- **`delete_notebook`**: Remove a notebook forever.
 
-- **Use Hierarchy**: Use `#` tags to help the Smart Merge engine organize your knowledge effectively.
-- **Modularize**: Create separate notebooks for different domains (e.g., separate your Business Logic from your Infrastructure).
-- **Periodic Rollbacks**: Don't be afraid to experiment; you can always revert to a previous knowledge state.
+## Tips
+
+- Give your notebooks clear names like "My App Idea" or "Recipe Box".
+- Use hashtags like `#important` to help the AI find things faster.
+- Ask your AI: *"What is in my 'Study Notes' notebook?"*

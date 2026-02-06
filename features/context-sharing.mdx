@@ -1,30 +1,27 @@
 ---
 title: "Context Sharing"
-description: "The Thread of Universal Memory"
+description: "Move Your AI's Memory"
 ---
 
-Context Sharing is a revolutionary feature that provides continuity across different "AI Hubs". It ensures that your AI agents share a single, evolving understanding of your work.
+Context Sharing lets you move your AI's "brain" from one tool to another. You can save what you are talking about in one app and load it in a different app.
 
-## Core Philosophy: Universal Memory
+## Why Use It?
 
-In the real world, no single AI is perfect for every task. You might use **Cursor** for rapid coding, **Claude Desktop** for complex logic, and **Windsurf** for autonomous flows. 
+Sometimes you want to switch tools. For example:
+- Use **Cursor** to write code.
+- Use **Claude** to solve a hard problem.
+- Use **Windsurf** for fast automation.
 
-Semoia MCP acts as the **Universal Memory** that threads these agents together.
+Semoia lets your AI remember everything as you switch between these tools.
 
-## Context Tools
+## Tools
 
-- **`manage_context(action: 'save')`**: The AI analyzes the current conversation, extracts key points, modified files, and crucial decisions, compressing them into a "Concise Memory".
-- **`manage_context(action: 'load')`**: Decompresses that memory into a new AI agent, grounding it instantly.
+- **`manage_context(action: 'save')`**: Save the current conversation. You will get a special "Context ID".
+- **`manage_context(action: 'load')`**: Open a new AI tool and say *"Load context [ID]"*. The AI will instantly remember what you were doing.
 
-## The Multi-AI Workflow
+## Simple Example
 
-The true power of Context Sharing shines in cross-agent collaboration:
-
-1. **Capture (Cursor)**: You finish a complex debugging session and save the context.
-2. **Consult (Claude)**: You load that context into Claude 3.5 Sonnet to ask: *"Given this context, how should we refactor the modular architecture for scalability?"*
-3. **Execute (Windsurf)**: You save the refined architecture from Claude and load it into Windsurf to automate the refactoring process.
-
-## Best Practices
-
-- **Explicit Saving**: Manually ask your AI to "Save context" before switching tasks or agents to ensure the latest insights are captured.
-- **Context IDs**: Keep track of your Context IDs to create "checkpoints" for different branches of a conversation.
+1. In **Cursor**, you ask the AI to "Save context". 
+2. The AI gives you an ID (like `ABC-123`).
+3. In **Claude**, you say "Load context `ABC-123`".
+4. Claude now knows everything you and Cursor were just talking about!

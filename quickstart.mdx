@@ -1,160 +1,118 @@
 ---
 title: "Setup"
-description: "Connect Semoia to your AI IDEs and Chatbots via MCP"
+description: "Connect Semoia to your AI tools"
 ---
 
-This guide provides everything you need to connect **Semoia** to your AI Development Environments (IDEs) and Chatbots using the Model Context Protocol (MCP).
+This guide shows you how to connect **Semoia** to your AI tools (like Cursor or Claude) using the Model Context Protocol (MCP).
 
 <Note>
-  **MCP (Model Context Protocol)** is an open standard that enables AI assistants to connect with external data systems and tools.
+  **MCP** is a simple way for AI tools to talk to other apps and data.
 </Note>
 
 ## Quick Setup (Recommended)
 
-The fastest way to install is using our automated script. This script automatically detects installed IDEs on your machine and configures them for you.
+The fastest way to start is with our automated script. It will find your AI tools and set them up for you.
 
 <Steps>
-  <Step title="Run Installation Command">
-    Open your Terminal and run the following command (supports macOS/Linux):
+  <Step title="Run the Command">
+    Open your Terminal and run this command:
 
     ```bash Terminal
     curl -fsSL https://semobeta.vercel.app/scripts/install-mcp.sh | bash
     ```
   </Step>
   
-  <Step title="Authenticate Account">
-    The command will automatically open your browser to log in to Semoia.
-    
+  <Step title="Log In">
+    The command will open your browser.
     1. Log in to your Semoia account.
-    2. Copy the **8-character Authentication Code** displayed.
+    2. Copy the **8-character code** you see.
   </Step>
 
-  <Step title="Complete Configuration">
-    Return to your Terminal:
-    1. Paste the authentication code and press Enter.
-    2. Select the IDEs you want to configure (all detected IDEs are selected by default).
+  <Step title="Finish">
+    Go back to your Terminal:
+    1. Paste the code and press Enter.
+    2. Select the tools you want to set up.
   </Step>
 
-  <Step title="Restart IDE">
+  <Step title="Restart">
     <Check>
-      Restart your IDE to apply the changes. Semoia MCP is now ready to use!
+      Restart your AI tool (like Cursor) to finish. You are ready to go!
     </Check>
   </Step>
 </Steps>
 
-## Manual Configuration
+## Manual Setup
 
-If you prefer to configure manually or if the Quick Setup doesn't work for you, follow the detailed instructions below for each tool.
+If the script doesn't work, you can set it up manually.
 
-**General Configuration Info:**
-
+**You will need:**
 - **Server URL:** `https://semobeta.vercel.app/api/mcp`
-- **API Key:** Get it at [https://semobeta.vercel.app/api-keys](https://semobeta.vercel.app/api-keys).
+- **API Key:** Get one at [trysemoia.com/api-keys](https://semobeta.vercel.app/api-keys).
 
 <Tabs>
   <Tab title="Cursor">
-    *Best support, requires version 1.0+*
+    1. Press `Cmd + Shift + P` (Mac) or `Ctrl + Shift + P` (Windows).
+    2. Search for **"MCP: Open Settings (JSON)"**.
+    3. Add this to the file:
 
-    <Steps>
-      <Step title="Open MCP Settings">
-        Press `Cmd + Shift + P` (macOS) or `Ctrl + Shift + P` (Windows/Linux) and select **"MCP: Open Settings (JSON)"**.
-      </Step>
-      
-      <Step title="Update Configuration">
-        Add the following to your `mcp.json`:
-
-        ```json mcp.json
-        {
-          "mcpServers": {
-            "semoia": {
-              "serverUrl": "https://semobeta.vercel.app/api/mcp",
-              "headers": {
-                "Authorization": "Bearer sk_semoia_..." 
-              }
-            }
+    ```json mcp.json
+    {
+      "mcpServers": {
+        "semoia": {
+          "serverUrl": "https://semobeta.vercel.app/api/mcp",
+          "headers": {
+            "Authorization": "Bearer YOUR_API_KEY" 
           }
         }
-        ```
-        <Warning>Replace `sk_semoia_...` with your actual API Key.</Warning>
-      </Step>
-    </Steps>
+      }
+    }
+    ```
+    *(Replace `YOUR_API_KEY` with your actual key)*
   </Tab>
 
   <Tab title="VS Code">
-    <Steps>
-      <Step title="Open Configuration File">
-        Open `mcp.json` at:
-        - **macOS:** `~/Library/Application Support/Code/User/mcp.json`
-        - **Windows:** `%APPDATA%\Code\User\mcp.json`
-      </Step>
-      
-      <Step title="Update Configuration">
-        ```json mcp.json
-        {
-          "mcpServers": {
-            "semoia": {
-              "serverUrl": "https://semobeta.vercel.app/api/mcp",
-              "headers": { "Authorization": "Bearer sk_semoia_..." }
-            }
-          }
+    Open your `mcp.json` file and add:
+
+    ```json mcp.json
+    {
+      "mcpServers": {
+        "semoia": {
+          "serverUrl": "https://semobeta.vercel.app/api/mcp",
+          "headers": { "Authorization": "Bearer YOUR_API_KEY" }
         }
-        ```
-      </Step>
-    </Steps>
+      }
+    }
+    ```
   </Tab>
 
   <Tab title="Windsurf">
-    <Steps>
-      <Step title="Open Configuration File">
-        Open `mcp.json` at:
-        - **macOS:** `~/.windsurf/mcp.json`
-        - **Windows:** `%APPDATA%\Windsurf\mcp.json`
-      </Step>
-      
-      <Step title="Update Configuration">
-        ```json mcp.json
-        {
-          "mcpServers": {
-            "semoia": {
-              "serverUrl": "https://semobeta.vercel.app/api/mcp",
-              "headers": { "Authorization": "Bearer sk_semoia_..." }
-            }
-          }
+    Open your `mcp.json` file and add:
+
+    ```json mcp.json
+    {
+      "mcpServers": {
+        "semoia": {
+          "serverUrl": "https://semobeta.vercel.app/api/mcp",
+          "headers": { "Authorization": "Bearer YOUR_API_KEY" }
         }
-        ```
-      </Step>
-    </Steps>
+      }
+    }
+    ```
   </Tab>
 
   <Tab title="Claude Desktop">
-    <Steps>
-      <Step title="Update Configuration">
-        Add the following to `claude_desktop_config.json`:
+    Add this to your `claude_desktop_config.json`:
 
-        ```json
-        {
-          "mcpServers": {
-            "semoia": {
-              "command": "npx",
-              "args": ["-y", "@modelcontextprotocol/inspector", "https://semobeta.vercel.app/api/mcp"],
-              "env": { "Authorization": "Bearer sk_semoia_..." }
-            }
-          }
+    ```json
+    {
+      "mcpServers": {
+        "semoia": {
+          "command": "npx",
+          "args": ["-y", "@modelcontextprotocol/inspector", "https://semobeta.vercel.app/api/mcp"],
+          "env": { "Authorization": "Bearer YOUR_API_KEY" }
         }
-        ```
-      </Step>
-    </Steps>
+      }
+    }
+    ```
   </Tab>
 </Tabs>
-
-## Browser Extension (Optional)
-
-The Semoia Browser Extension helps you capture conversations from web-based AI tools (ChatGPT, Claude.ai) to build your knowledge base.
-
-<Card
-  title="Download Extension"
-  icon="download"
-  href="https://chrome.google.com/webstore"
->
-  Download the Semoia Extension from the Chrome Web Store (Coming Soon).
-</Card>

@@ -1,34 +1,28 @@
 ---
 title: "Use Cases"
-description: "Mastering the AI-Powered Workflow"
+description: "How to use Semoia every day"
 ---
 
-Semoia MCP transforms your AI from a stateless chatbot into a project-aware collaborator. Here are the specialized workflows used by elite developer teams.
+Semoia makes your AI smarter by giving it a memory. Here are some easy ways to use it.
 
-## Specialized Workflows
+## Simple Workflows
 
-### 1. Feature Development Lifecycle
-Don't let your feature ideas die in the chat history. Use this end-to-end flow:
-1. **Brainstorming**: Use **Jots** to record fragmented ideas as you think of them.
-2. **Structuring**: Ask the AI to synthesize those jots into a new **Notebook** with `## Requirements` and `## Architecture` sections.
-3. **Execution**: As you code, use `write_notebook` to keep the logic and implementation details updated in real-time.
-4. **Bug Tracking**: Discover a bug? Record it immediately with `jot #bug` for later resolution.
+### 1. Building New Things
+1. **Jots**: Save small ideas as you think of them using `jot`.
+2. **Notebooks**: Ask the AI to put those ideas into a **Notebook**.
+3. **Execution**: While you work, the AI saves updates to the Notebook so it never forgets your project's rules.
 
-### 2. Technical Documentation Management
-Traditional technical docs often "die" in static Markdown files. With Semoia, your AI actively maintains them.
-- **Dependency Management**: When you add a new library, the AI can automatically update the `## Dependencies` section in your documentation notebook.
-- **Logic Explainer**: Ask: *"Summarize the current state of our auth flow in the 'Architecture' notebook."*
+### 2. Multi-AI Help
+Found a hard problem?
+- **Save**: Tell your first AI to "Save context".
+- **Switch**: Open a different, smarter AI tool.
+- **Load**: Tell it to "Load context". 
+- **Solve**: It now knows the whole story and can help you fix the problem faster.
 
-### 3. Multi-AI Consultation (Cross-Agent Debugging)
-Found a bug that Cursor can't solve?
-- **Step 1 (Cursor)**: Ask Cursor to "Save context" of the current issue.
-- **Step 2 (Claude 3.5 Sonnet)**: Open Claude Desktop, load that Context ID, and ask: *"Considering this background, why is this logic failing at line 45?"*
-- **Step 3 (Cursor)**: Bring the solution back to Cursor and execute the fix.
+### 3. Personal Knowledge
+Create a "Personal" notebook for things you use all the time:
+- Your favorite code patterns.
+- How you like to organize folders.
+- Links and details you always forget.
 
-## Industry Scenarios
-
-| Scenario | Workflow |
-| :--- | :--- |
-| **Onboarding** | Point new developers to the "Onboarding" Notebook for an instant context dump. |
-| **Research** | Use Jots to collect paper summaries and Notebooks to synthesize them into a literature review. |
-| **Incident Response** | Record the timeline of an incident with Jots and summarize the post-mortem in a Notebook. |
+Just ask: *"Check my 'Personal' notebook for how to do X."*
