@@ -1,28 +1,34 @@
 ---
 title: "Use Cases"
-description: "How to get the most out of Semoia MCP"
+description: "Mastering the AI-Powered Workflow"
 ---
 
-## 💡 Common Workflows
+Semoia MCP transforms your AI from a stateless chatbot into a project-aware collaborator. Here are the specialized workflows used by elite developer teams.
 
-### 1. "Second Brain" for Developers
-Instead of trying to remember every complex logic, ask your AI to save it to a Notebook. Next time you need it, simply ask: *"Explain the payment processing logic I noted last week"* and Semoia will provide the exact context.
+## 🚀 Specialized Workflows
 
-### 2. Work Log & Task Tracking
-Use **Jots** to record tasks or bugs as you discover them while coding:
-> *"Save jot: Reconfigure OAuth 2.1 #priority #task"*
+### 1. Feature Development Lifecycle
+Don't let your feature ideas die in the chat history. Use this end-to-end flow:
+1. **Brainstorming**: Use **Jots** to record fragmented ideas as you think of them.
+2. **Structuring**: Ask the AI to synthesize those jots into a new **Notebook** with `## Requirements` and `## Architecture` sections.
+3. **Execution**: As you code, use `write_notebook` to keep the logic and implementation details updated in real-time.
+4. **Bug Tracking**: Discover a bug? Record it immediately with `jot #bug` for later resolution.
 
-### 3. Documentation & Research
-When learning a new library or tool, ask your AI: *"Summarize the key takeaways for library X into my 'Research' notebook."* You can now access this knowledge in any future project.
+### 2. Technical Documentation Management
+Traditional technical docs often "die" in static Markdown files. With Semoia, your AI actively maintains them.
+- **Dependency Management**: When you add a new library, the AI can automatically update the `## Dependencies` section in your documentation notebook.
+- **Logic Explainer**: Ask: *"Summarize the current state of our auth flow in the 'Architecture' notebook."*
 
-### 4. Context Transfer Between AI Agents
-Moving from Cursor to Claude Desktop for a deeper analysis? 
-1. **In Cursor**: *"Save this conversation context"* → Get a Context ID.
-2. **In Claude**: *"Load context [ID]"*.
-The AI will now have the full background of your previous discussion.
+### 3. Multi-AI Consultation (Cross-Agent Debugging)
+Found a bug that Cursor can't solve?
+- **Step 1 (Cursor)**: Ask Cursor to "Save context" of the current issue.
+- **Step 2 (Claude 3.5 Sonnet)**: Open Claude Desktop, load that Context ID, and ask: *"Considering this background, why is this logic failing at line 45?"*
+- **Step 3 (Cursor)**: Bring the solution back to Cursor and execute the fix.
 
-### 5. Project Knowledge Management
-Create dedicated Notebooks for each project to store:
-- Database Schema definitions.
-- Specific Business Logic.
-- Key Design Decisions.
+## 💡 Industry Scenarios
+
+| Scenario | Workflow |
+| :--- | :--- |
+| **Onboarding** | Point new developers to the "Onboarding" Notebook for an instant context dump. |
+| **Research** | Use Jots to collect paper summaries and Notebooks to synthesize them into a literature review. |
+| **Incident Response** | Record the timeline of an incident with Jots and summarize the post-mortem in a Notebook. |

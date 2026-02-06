@@ -1,24 +1,30 @@
 ---
 title: "Context Sharing"
-description: "Transfer your AI conversations between agents seamlessly"
+description: "The Thread of Universal Memory"
 ---
 
-Context Sharing allows you to bridge the gap between different AI tools. You can save the state of a conversation in one agent and load it in another, ensuring a continuous workflow.
+Context Sharing is a revolutionary feature that provides continuity across different "AI Hubs". It ensures that your AI agents share a single, evolving understanding of your work.
 
-## Core Features
+## 🌐 Core Philosophy: Universal Memory
 
-- **Agent Portability**: Move from Cursor to Claude Desktop or vice versa without losing progress.
-- **Full History Preservation**: Captures the nuances and background of your current session.
-- **On-Demand Loading**: Only load the context when you need it.
+In the real world, no single AI is perfect for every task. You might use **Cursor** for rapid coding, **Claude Desktop** for complex logic, and **Windsurf** for autonomous flows. 
 
-## Context Tools
+Semoia MCP acts as the **Universal Memory** that threads these agents together.
 
-- **`manage_context`**: The primary tool for saving and loading conversation states.
-    - **Save**: Generates a unique Context ID for your current session.
-    - **Load**: Uses a Context ID to retrieve and apply a previous session's background to the current agent.
+## 🛠️ Context Tools
 
-## Example Workflow
+- **`manage_context(action: 'save')`**: The AI analyzes the current conversation, extracts key points, modified files, and crucial decisions, compressing them into a "Concise Memory".
+- **`manage_context(action: 'load')`**: Decompresses that memory into a new AI agent, grounding it instantly.
 
-1. **Step 1 (Cursor)**: You are deep in a debugging session. You ask: *"Save this conversation context."* The AI responds with a Context ID.
-2. **Step 2 (Claude Desktop)**: You open a new window for a higher-level architectural review. You say: *"Load context [Context ID]"*.
-3. **Step 3 (Success)**: Claude now understands everything you've already discussed and debugged in Cursor.
+## 🔄 The Multi-AI Workflow
+
+The true power of Context Sharing shines in cross-agent collaboration:
+
+1. **Capture (Cursor)**: You finish a complex debugging session and save the context.
+2. **Consult (Claude)**: You load that context into Claude 3.5 Sonnet to ask: *"Given this context, how should we refactor the modular architecture for scalability?"*
+3. **Execute (Windsurf)**: You save the refined architecture from Claude and load it into Windsurf to automate the refactoring process.
+
+## 💡 Best Practices
+
+- **Explicit Saving**: Manually ask your AI to "Save context" before switching tasks or agents to ensure the latest insights are captured.
+- **Context IDs**: Keep track of your Context IDs to create "checkpoints" for different branches of a conversation.

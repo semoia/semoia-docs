@@ -1,32 +1,30 @@
 ---
 title: "Notebooks"
-description: "Manage structured knowledge with Semoia Notebooks"
+description: "Your AI's Long-term Knowledge System"
 ---
 
-Notebooks are the core of Semoia's structured knowledge management. They are designed for long-form, organized content with full Markdown support.
+Notebooks are structured "smart ledgers" designed to preserve critical information across multiple sessions. Think of a Notebook as a persistent manual that your AI can reference, learn from, and update intelligently.
 
-## Core Features
+## 🧠 Core Philosophy: Smart Merge
 
-- **Structured Content**: Organize your knowledge into sections and subsections.
-- **Markdown Support**: Use the full power of Markdown to format your notes.
-- **Intelligent Merging**: Semoia automatically merges new information into existing sections without clutter.
+Unlike traditional text files, Semoia Notebooks are built for **evolution**. 
 
-## Notebook Tools
+When your AI "writes" to a notebook, it doesn't just append text; it performs a **Smart Merge**:
+1. **Structural Awareness**: The system parses Markdown headings (`#`, `##`) into nodes.
+2. **Delta Updates**: If the AI updates your `## API List`, other sections like `## Setup Guide` remain untouched, saving context window and preventing data loss.
+3. **Checkpoints**: Every update creates a new version, allowing you to track the growth of your project's knowledge over time.
 
-When interacting with your AI agent, you can use the following tools:
+## 🛠️ Notebook Tools
 
-- **`list_notebooks`**: View all your existing notebooks.
-- **`create_notebook`**: Create a new notebook for a project or topic.
-- **`read_notebook`**: View the latest version of a notebook's content.
-- **`write_notebook`**: Save data to a notebook. Supports two modes:
-    - **Merge (Default)**: Intelligently merges new content into relevant sections.
-    - **Replace**: Overwrites the entire notebook.
-- **`search_notebooks`**: Semantic search across all your notebooks to find exactly what you need.
-- **`rollback_notebook`**: Undo the last write operation if something went wrong.
-- **`delete_notebook`**: Permanently delete a notebook.
+- **`list_notebooks`**: Overview of all your knowledge repositories. Each has a unique ID for precise AI access.
+- **`create_notebook`**: Initialize a new space for a specific project (e.g., "Frontend Web", "Database Design").
+- **`read_notebook`**: The AI retrieves the latest checkpoint to ground itself in your project's current state.
+- **`write_notebook`**: The primary tool for structured recording. The AI "thinks" about the hierarchy as it saves.
+- **`search_notebooks`**: Leverages **Hybrid Search** (combining keywords and semantic meaning) to find specific logic or code snippets from a simple natural language query.
+- **`rollback_notebook`**: Built-in **Version Control**. Similar to `git revert`, this allows you to undo unwanted AI changes instantly.
 
-## Best Practices
+## 💡 Best Practices
 
-1. **Specific Titles**: Give your notebooks clear, descriptive titles so the AI can find them easily.
-2. **Use Sections**: Use `#` and `##` headings to help Semoia's merge engine organize your content.
-3. **Semantic Search**: Don't worry about exact keywords; Semoia understands the context of your queries.
+- **Use Hierarchy**: Use `#` tags to help the Smart Merge engine organize your knowledge effectively.
+- **Modularize**: Create separate notebooks for different domains (e.g., separate your Business Logic from your Infrastructure).
+- **Periodic Rollbacks**: Don't be afraid to experiment; you can always revert to a previous knowledge state.
