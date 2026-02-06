@@ -1,27 +1,23 @@
 ---
 title: "Context Sharing"
-description: "Move Your AI's Memory"
+description: "Work across different AI apps seamlessly"
 ---
 
-Context Sharing lets you move your AI's "brain" from one tool to another. You can save what you are talking about in one app and load it in a different app.
+Context Sharing lets your AI memory follow you when you switch apps.
 
-## Why Use It?
+## Real-World Examples
 
-Sometimes you want to switch tools. For example:
-- Use **Cursor** to write code.
-- Use **Claude** to solve a hard problem.
-- Use **Windsurf** for fast automation.
+### 1. Moving from Coding to Solving
+You are coding in **Cursor** and find a very hard bug. You want to ask a smarter model like **Claude 3.5 Sonnet** for help.
+- **Action**: Tell Cursor to "Save context". It gives you an ID like `BUG-FIX-123`.
+- **Action**: Open Claude and say "Load context `BUG-FIX-123`".
+- **Benefit**: Claude now knows exactly what you were doing in Cursor and can help you solve the bug instantly.
 
-Semoia lets your AI remember everything as you switch between these tools.
+### 2. Saving a Long Conversation
+If you have been talking to an AI for a long time, the chat can get very slow or messy.
+- **Action**: Tell the AI to "Save context". 
+- **Action**: Start a fresh chat and "Load context".
+- **Benefit**: The AI starts a brand new, fast chat but still remembers all the important decisions you made.
 
-## Tools
-
-- **`manage_context(action: 'save')`**: Save the current conversation. You will get a special "Context ID".
-- **`manage_context(action: 'load')`**: Open a new AI tool and say *"Load context [ID]"*. The AI will instantly remember what you were doing.
-
-## Simple Example
-
-1. In **Cursor**, you ask the AI to "Save context". 
-2. The AI gives you an ID (like `ABC-123`).
-3. In **Claude**, you say "Load context `ABC-123`".
-4. Claude now knows everything you and Cursor were just talking about!
+## Why it Matters
+No AI is perfect for every task. Semoia lets you use the best AI for the job while keeping your project memory in one place.

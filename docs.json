@@ -23,6 +23,7 @@
           {
             "group": "Features",
             "pages": [
+              "features/available-features",
               "features/notebooks",
               "features/jots",
               "features/context-sharing"
