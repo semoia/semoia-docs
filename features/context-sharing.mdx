@@ -8,16 +8,16 @@ Context Sharing lets your AI memory follow you when you switch apps.
 ## Real-World Examples
 
 ### 1. Moving from Coding to Solving
-You are coding in **Cursor** and find a very hard bug. You want to ask a smarter model like **Claude 3.5 Sonnet** for help.
-- **Action**: Tell Cursor to "Save context". It gives you an ID like `BUG-FIX-123`.
-- **Action**: Open Claude and say "Load context `BUG-FIX-123`".
-- **Benefit**: Claude now knows exactly what you were doing in Cursor and can help you solve the bug instantly.
+You are coding in **Cursor** and find a hard bug. You want to ask a smarter model like **Claude 3.5 Sonnet** for help.
+- **Action**: Tell Cursor to use **`manage_context`** with the 'save' action. It gives you a Context ID.
+- **Action**: Open Claude and use **`manage_context`** with the 'load' action and that ID.
+- **Benefit**: Claude now knows exactly what you were doing in Cursor and can help you instantly.
 
 ### 2. Saving a Long Conversation
-If you have been talking to an AI for a long time, the chat can get very slow or messy.
-- **Action**: Tell the AI to "Save context". 
-- **Action**: Start a fresh chat and "Load context".
-- **Benefit**: The AI starts a brand new, fast chat but still remembers all the important decisions you made.
+If your chat gets too long and slow, use **`manage_context`** to refresh it.
+- **Action**: "Save" your context in the current chat. 
+- **Action**: Start a new chat and "Load" that context.
+- **Benefit**: The AI starts a brand new, fast chat but still remembers all your important project decisions.
 
 ## Why it Matters
 No AI is perfect for every task. Semoia lets you use the best AI for the job while keeping your project memory in one place.
