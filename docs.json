@@ -7,107 +7,32 @@
     "light": "#ffffff",
     "dark": "#000000"
   },
-  "modeToggle": {
-    "default": "dark",
-    "isHidden": false
-  },
   "favicon": "/favicon.svg",
   "navigation": {
     "tabs": [
       {
-        "tab": "Introduction",
+        "tab": "Semoia MCP",
         "pages": [
           "index",
-          "pricing",
-          "quickstart",
-          "faq"
-        ]
-      },
-      {"groups": [
-          {
-            "group": "User manual",
-            "pages": [
-              "user-manual"
-            ]
-          },
-          {
-            "group": "Endpoint examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
-            ]
-          }
+          "use-cases"
         ]
       },
       {
-        "tab": "User manual",
+        "tab": "Setup",
         "pages": [
-          "index",
-          "Plans & Pricing",
-          "Quickstart",
-          "FAQ"
+          "quickstart"
         ]
       },
       {
-        "tab": "Rules",
-        "groups": [
-          {
-            "group": "API documentation",
-            "pages": [
-              "api-reference/introduction"
-            ]
-          },
-          {
-            "group": "Endpoint examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "Use cases",
-        "groups": [
-          {
-            "group": "API documentation",
-            "pages": [
-              "api-reference/introduction"
-            ]
-          },
-          {
-            "group": "Endpoint examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
-            ]
-          }
+        "tab": "Support",
+        "pages": [
+          "user-manual"
         ]
       },
       {
         "tab": "Changelog",
-        "groups": [
-          {
-            "group": "API documentation",
-            "pages": [
-              "api-reference/introduction"
-            ]
-          },
-          {
-            "group": "Endpoint examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
-            ]
-          }
+        "pages": [
+          "changelog"
         ]
       }
     ]

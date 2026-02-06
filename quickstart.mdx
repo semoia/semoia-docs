@@ -1,87 +1,160 @@
 ---
-title: "Quickstart"
-description: "Get started with Semoia in minutes"
+title: "Setup"
+description: "Connect Semoia to your AI IDEs and Chatbots via MCP"
 ---
 
-## Get started in two steps
+This guide provides everything you need to connect **Semoia** to your AI Development Environments (IDEs) and Chatbots using the Model Context Protocol (MCP).
 
-### 1. Browser Extension
+<Note>
+  **MCP (Model Context Protocol)** is an open standard that enables AI assistants to connect with external data systems and tools.
+</Note>
 
-The Extension is the bridge between Semoia and AI tools (ChatGPT, Claude, Gemini, etc.).
+## 🚀 Quick Setup (Recommended)
+
+The fastest way to install is using our automated script. This script automatically detects installed IDEs on your machine and configures them for you.
+
+<Steps>
+  <Step title="Run Installation Command">
+    Open your Terminal and run the following command (supports macOS/Linux):
+
+    ```bash Terminal
+    curl -fsSL https://semobeta.vercel.app/scripts/install-mcp.sh | bash
+    ```
+  </Step>
+  
+  <Step title="Authenticate Account">
+    The command will automatically open your browser to log in to Semoia.
+    
+    1. Log in to your Semoia account.
+    2. Copy the **8-character Authentication Code** displayed.
+  </Step>
+
+  <Step title="Complete Configuration">
+    Return to your Terminal:
+    1. Paste the authentication code and press Enter.
+    2. Select the IDEs you want to configure (all detected IDEs are selected by default).
+  </Step>
+
+  <Step title="Restart IDE">
+    <Check>
+      Restart your IDE to apply the changes. Semoia MCP is now ready to use!
+    </Check>
+  </Step>
+</Steps>
+
+## 🛠️ Manual Configuration
+
+If you prefer to configure manually or if the Quick Setup doesn't work for you, follow the detailed instructions below for each tool.
+
+**General Configuration Info:**
+
+- **Server URL:** `https://semobeta.vercel.app/api/mcp`
+- **API Key:** Get it at [https://semobeta.vercel.app/api-keys](https://semobeta.vercel.app/api-keys).
+
+<Tabs>
+  <Tab title="Cursor">
+    *Best support, requires version 1.0+*
+
+    <Steps>
+      <Step title="Open MCP Settings">
+        Press `Cmd + Shift + P` (macOS) or `Ctrl + Shift + P` (Windows/Linux) and select **"MCP: Open Settings (JSON)"**.
+      </Step>
+      
+      <Step title="Update Configuration">
+        Add the following to your `mcp.json`:
+
+        ```json mcp.json
+        {
+          "mcpServers": {
+            "semoia": {
+              "serverUrl": "https://semobeta.vercel.app/api/mcp",
+              "headers": {
+                "Authorization": "Bearer sk_semoia_..." 
+              }
+            }
+          }
+        }
+        ```
+        <Warning>Replace `sk_semoia_...` with your actual API Key.</Warning>
+      </Step>
+    </Steps>
+  </Tab>
+
+  <Tab title="VS Code">
+    <Steps>
+      <Step title="Open Configuration File">
+        Open `mcp.json` at:
+        - **macOS:** `~/Library/Application Support/Code/User/mcp.json`
+        - **Windows:** `%APPDATA%\Code\User\mcp.json`
+      </Step>
+      
+      <Step title="Update Configuration">
+        ```json mcp.json
+        {
+          "mcpServers": {
+            "semoia": {
+              "serverUrl": "https://semobeta.vercel.app/api/mcp",
+              "headers": { "Authorization": "Bearer sk_semoia_..." }
+            }
+          }
+        }
+        ```
+      </Step>
+    </Steps>
+  </Tab>
+
+  <Tab title="Windsurf">
+    <Steps>
+      <Step title="Open Configuration File">
+        Open `mcp.json` at:
+        - **macOS:** `~/.windsurf/mcp.json`
+        - **Windows:** `%APPDATA%\Windsurf\mcp.json`
+      </Step>
+      
+      <Step title="Update Configuration">
+        ```json mcp.json
+        {
+          "mcpServers": {
+            "semoia": {
+              "serverUrl": "https://semobeta.vercel.app/api/mcp",
+              "headers": { "Authorization": "Bearer sk_semoia_..." }
+            }
+          }
+        }
+        ```
+      </Step>
+    </Steps>
+  </Tab>
+
+  <Tab title="Claude Desktop">
+    <Steps>
+      <Step title="Update Configuration">
+        Add the following to `claude_desktop_config.json`:
+
+        ```json
+        {
+          "mcpServers": {
+            "semoia": {
+              "command": "npx",
+              "args": ["-y", "@modelcontextprotocol/inspector", "https://semobeta.vercel.app/api/mcp"],
+              "env": { "Authorization": "Bearer sk_semoia_..." }
+            }
+          }
+        }
+        ```
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+## 🧩 Browser Extension (Optional)
+
+The Semoia Browser Extension helps you capture conversations from web-based AI tools (ChatGPT, Claude.ai) to build your knowledge base.
 
 <Card
   title="Download Extension"
   icon="download"
   href="https://chrome.google.com/webstore"
 >
-  Download the Semoia Extension from Chrome Web Store (link coming soon).
+  Download the Semoia Extension from the Chrome Web Store (Coming Soon).
 </Card>
-
-<Steps>
-<Step title="Download Extension from Chrome Web Store">
-  Download and install the Semoia Extension from Chrome Web Store to get started.
-</Step>
-
-<Step title="Pin Extension to browser toolbar">
-  After installation, pin the Extension to your browser toolbar for easy access.
-</Step>
-
-<Step title="Sign in to sync with your Web account">
-  Sign in to the Extension to sync with your Web account.
-</Step>
-
-<Step title="Capture conversation">
-  When chatting with AI, click the Semoia icon to "Capture" (collect) the conversation into the queue.
-</Step>
-</Steps>
-
-### 2. Access Dashboard
-
-Access the Dashboard to manage your Ledgers.
-
-Sign in via Clerk (Google/GitHub/Email) at [Dashboard](https://www.trysemoia.com).
-
-<Card
-  title="Open Dashboard"
-  icon="window"
-  href="https://www.trysemoia.com"
->
-  Access the Dashboard to start managing your Ledgers and Memories.
-</Card>
-
-## Next steps
-
-<CardGroup cols={2}>
-  <Card
-    title="Install Extension"
-    icon="puzzle-piece"
-    href="/install-extension"
-  >
-    Learn more about installing and using the Browser Extension.
-  </Card>
-  <Card
-    title="Use Cases"
-    icon="lightbulb"
-    href="/use-cases"
-  >
-    Discover real-world use cases for Semoia.
-  </Card>
-  <Card
-    title="Tips & Tricks"
-    icon="wand-magic-sparkles"
-    href="/tips-tricks"
-  >
-    Learn tips and tricks to use Semoia most effectively.
-  </Card>
-  <Card
-    title="FAQ"
-    icon="circle-question"
-    href="/faq"
-  >
-    Find answers to frequently asked questions.
-  </Card>
-</CardGroup>
-<Accordion icon="rocket" title="Publish your docs">
-  1. Commit and push your changes.
-  2. Your docs will update and be live in moments!
-</Accordion> 
