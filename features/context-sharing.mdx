@@ -5,19 +5,20 @@ description: "Work across different AI apps seamlessly"
 
 Context Sharing lets your AI memory follow you when you switch apps.
 
-## Real-World Examples
+## Unified Context Tool
 
-### 1. Moving from Coding to Solving
-You are coding in **Cursor** and find a hard bug. You want to ask a smarter model like **Claude 3.5 Sonnet** for help.
-- **Action**: Tell Cursor to use **`manage_context`** with the 'save' action. It gives you a Context ID.
-- **Action**: Open Claude and use **`manage_context`** with the 'load' action and that ID.
-- **Benefit**: Claude now knows exactly what you were doing in Cursor and can help you instantly.
+The **`manage_context`** tool is the key to moving memory. It has two main actions:
 
-### 2. Saving a Long Conversation
-If your chat gets too long and slow, use **`manage_context`** to refresh it.
-- **Action**: "Save" your context in the current chat. 
-- **Action**: Start a new chat and "Load" that context.
-- **Benefit**: The AI starts a brand new, fast chat but still remembers all your important project decisions.
+- **`save`**: The AI compresses the core details of your chat into a "Context ID".
+- **`load`**: A new AI uses the "Context ID" to instantly remember everything.
 
-## Why it Matters
-No AI is perfect for every task. Semoia lets you use the best AI for the job while keeping your project memory in one place.
+## How It Works
+
+This feature creates a "thread of continuity" between different AI tools.
+
+1. **Capture**: You finish work in **Cursor** and ask to "Save context". 
+2. **ID Generation**: Semoia gives you a special ID (like `DEV-LOG-123`).
+3. **Handover**: Open a model like **Claude 3.5 Sonnet** and say *"Load context `DEV-LOG-123`"*.
+4. **Resolution**: Claude now has the full background and can help you solve complex problems without you re-explaining everything.
+
+This ensures you always use the best AI for the job while keeping one project memory.

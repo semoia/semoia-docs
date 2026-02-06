@@ -1,24 +1,38 @@
 ---
 title: "Notebooks"
-description: "Manage your project's big picture"
+description: "Your project's long-term memory"
 ---
 
 Notebooks are for important, long-term information. They help your AI stay "grounded" in your project details.
 
-## Real-World Examples
+## Tools
+
+Your AI can use these commands to manage notebooks:
+
+- **`list_notebooks`**: See all your notebooks.
+- **`create_notebook`**: Make a new notebook for a project.
+- **`read_notebook`**: Read the latest notes.
+- **`write_notebook`**: Save new information or change notes.
+- **`search_notebooks`**: Find specific details just by asking.
+- **`rollback_notebook`**: Undo the last change if the AI made a mistake.
+- **`delete_notebook`**: Remove a notebook forever.
+
+## How it Works
+
+Semoia Notebooks are smarter than simple text files. 
+
+1. **Smart Merging**: When the AI uses **`write_notebook`**, it only changes the parts that need updating. The rest of your notes stay safe.
+2. **Auto-Organizer**: The AI uses Markdown headings (`#`, `##`) to group your notes into logical "blocks".
+3. **Evolution**: Every time you save, a new "checkpoint" is made. You can always go back to an earlier version using **`rollback_notebook`**.
+
+## Use Cases
 
 ### 1. Starting a New Project
-When you start a new app, you can use the **`create_notebook`** tool to make a notebook called "Project Requirements". 
-- Use **`list_notebooks`** to see all your current projects.
-- The AI will automatically save your folder structure and design rules.
-Next time you chat, the AI will use **`read_notebook`** to remember how to build things correctly.
+Use **`create_notebook`** to make a notebook called "Project Requirements". 
+- Save your folder structure and main rules.
+- Later, the AI uses **`read_notebook`** so it doesn't have to ask you how to build things again.
 
-### 2. Managing Technical Docs
-Instead of searching through old files, use **`write_notebook`** to keep your tech docs updated. 
-- **Example**: If you add a new library, the AI will update the setup steps in your notebook. 
-- **Benefit**: Ask the AI: *"How do I add a new page?"* and it will use **`search_notebooks`** to give you the perfect answer.
-
-## How it Works Simply
-- **Auto-Organize**: The AI keeps your notes tidy using headings.
-- **Smart Updates**: Using **`write_notebook`**, only the changes you want are saved.
-- **History**: Use **`rollback_notebook`** to go back to old versions if the AI makes a mistake.
+### 2. Managing Tech Docs
+Use **`write_notebook`** to keep your technical documentation updated. 
+- When you add a new feature, the AI updates the relevant sections automatically.
+- Use **`search_notebooks`** to find setup steps or logic rules instantly.
