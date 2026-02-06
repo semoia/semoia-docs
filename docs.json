@@ -12,21 +12,30 @@
     "tabs": [
       {
         "tab": "Semoia MCP",
-        "pages": [
-          "index",
-          "use-cases"
-        ]
-      },
-      {
-        "tab": "Setup",
-        "pages": [
-          "quickstart"
+        "groups": [
+          {
+            "group": "Introduction",
+            "pages": [
+              "index",
+              "quickstart"
+            ]
+          },
+          {
+            "group": "Features",
+            "pages": [
+              "features/notebooks",
+              "features/jots",
+              "features/context-sharing"
+            ]
+          }
         ]
       },
       {
         "tab": "Support",
         "pages": [
-          "user-manual"
+          "support",
+          "user-manual",
+          "use-cases"
         ]
       },
       {
@@ -41,7 +50,7 @@
     "links": [
       {
         "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "href": "mailto:hi@trysemoia.com"
       }
     ],
     "primary": {

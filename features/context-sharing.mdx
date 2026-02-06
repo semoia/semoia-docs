@@ -1,0 +1,24 @@
+---
+title: "Context Sharing"
+description: "Transfer your AI conversations between agents seamlessly"
+---
+
+Context Sharing allows you to bridge the gap between different AI tools. You can save the state of a conversation in one agent and load it in another, ensuring a continuous workflow.
+
+## Core Features
+
+- **Agent Portability**: Move from Cursor to Claude Desktop or vice versa without losing progress.
+- **Full History Preservation**: Captures the nuances and background of your current session.
+- **On-Demand Loading**: Only load the context when you need it.
+
+## Context Tools
+
+- **`manage_context`**: The primary tool for saving and loading conversation states.
+    - **Save**: Generates a unique Context ID for your current session.
+    - **Load**: Uses a Context ID to retrieve and apply a previous session's background to the current agent.
+
+## Example Workflow
+
+1. **Step 1 (Cursor)**: You are deep in a debugging session. You ask: *"Save this conversation context."* The AI responds with a Context ID.
+2. **Step 2 (Claude Desktop)**: You open a new window for a higher-level architectural review. You say: *"Load context [Context ID]"*.
+3. **Step 3 (Success)**: Claude now understands everything you've already discussed and debugged in Cursor.
