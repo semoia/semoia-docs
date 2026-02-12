@@ -1,0 +1,45 @@
+---
+title: "VS Code"
+description: "How to configure Manual Configuration for VS Code"
+---
+
+Open your VS Code MCP configuration:
+- Run **MCP: Open User Configuration** from the Command Palette
+- Or manually edit:
+  - **macOS/Linux**: `~/.config/Code/User/mcp.json`
+  - **Windows**: `%APPDATA%\Code\User\mcp.json`
+
+See [VS Code MCP docs](https://code.visualstudio.com/docs/copilot/chat/mcp-servers) for more info.
+
+**Remote Server (Recommended):**
+
+```json
+"mcp": {
+  "servers": {
+    "semoia": {
+      "type": "http",
+      "url": "https://semobeta.vercel.app/mcp",
+      "headers": {
+        "Authorization": "Bearer YOUR_API_KEY"
+      }
+    }
+  }
+}
+```
+
+**Local Server (Proxy Bridge):**
+
+```json
+"mcp": {
+  "servers": {
+    "semoia": {
+      "type": "command",
+      "command": "npx",
+      "args": ["-y", "@semoia/mcp"],
+      "env": {
+        "SEMOIA_API_KEY": "YOUR_API_KEY"
+      }
+    }
+  }
+}
+```

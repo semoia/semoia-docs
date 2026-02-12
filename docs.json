@@ -37,6 +37,18 @@
         ]
       },
       {
+        "tab": "Manual Configuration",
+        "pages": [
+          "mcp/cursor",
+          "mcp/vscode",
+          "mcp/windsurf",
+          "mcp/claude",
+          "mcp/antigravity",
+          "mcp/zed",
+          "mcp/other-clients"
+        ]
+      },
+      {
         "tab": "Support",
         "pages": [
           "support",

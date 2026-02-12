@@ -1,0 +1,41 @@
+---
+title: "Windsurf"
+description: "How to configure Manual Configuration for Windsurf"
+---
+
+Open your Windsurf MCP configuration:
+- **macOS**: `~/.windsurf/mcp.json`
+- **Windows**: `%APPDATA%\Windsurf\mcp.json`
+- **Linux**: `~/.config/windsurf/mcp.json`
+
+See [Windsurf MCP docs](https://docs.windsurf.com/windsurf/cascade/mcp) for more info.
+
+**Remote Server (Recommended):**
+
+```json
+{
+  "mcpServers": {
+    "semoia": {
+      "serverUrl": "https://semobeta.vercel.app/mcp",
+      "headers": {
+        "Authorization": "Bearer YOUR_API_KEY"
+      }
+    }
+  }
+}
+```
+
+**Local Server (Proxy Bridge):**
+
+```json
+{
+  "mcpServers": {
+    "semoia": {
+      "command": "npx -y @semoia/mcp",
+      "env": {
+        "SEMOIA_API_KEY": "YOUR_API_KEY"
+      }
+    }
+  }
+}
+```

@@ -1,0 +1,44 @@
+---
+title: "Cursor"
+description: "How to configure Manual Configuration for Cursor"
+---
+
+Go to: **Settings → Cursor Settings → MCP → Add new global MCP server**
+
+In Cursor 1.0 and later, manually edit `~/.cursor/mcp.json`:
+- **macOS**: `~/.cursor/mcp.json`
+- **Windows**: `%APPDATA%\Cursor\mcp.json`
+- **Linux**: `~/.config/cursor/mcp.json`
+
+See [Cursor MCP docs](https://docs.cursor.com/context/model-context-protocol) for more info.
+
+**Remote Server (Recommended):**
+
+```json
+{
+  "mcpServers": {
+    "semoia": {
+      "url": "https://semobeta.vercel.app/mcp",
+      "headers": {
+        "Authorization": "Bearer YOUR_API_KEY"
+      }
+    }
+  }
+}
+```
+
+**Local Server (Proxy Bridge):**
+
+```json
+{
+  "mcpServers": {
+    "semoia": {
+      "command": "npx",
+      "args": ["-y", "@semoia/mcp"],
+      "env": {
+        "SEMOIA_API_KEY": "YOUR_API_KEY"
+      }
+    }
+  }
+}
+```

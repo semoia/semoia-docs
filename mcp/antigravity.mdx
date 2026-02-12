@@ -1,0 +1,37 @@
+---
+title: "Antigravity"
+description: "How to configure Manual Configuration for Antigravity"
+---
+
+Add this to your Antigravity MCP config file.
+
+**Remote Server (Recommended):**
+
+```json
+{
+  "mcpServers": {
+    "semoia": {
+      "serverUrl": "https://semobeta.vercel.app/mcp",
+      "headers": {
+        "Authorization": "Bearer YOUR_API_KEY"
+      }
+    }
+  }
+}
+```
+
+**Local Server (Proxy Bridge):**
+
+```json
+{
+  "mcpServers": {
+    "semoia": {
+      "command": "npx",
+      "args": ["-y", "@semoia/mcp"],
+      "env": {
+        "SEMOIA_API_KEY": "YOUR_API_KEY"
+      }
+    }
+  }
+}
+```
