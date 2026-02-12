@@ -1,141 +1,72 @@
 ---
-title: "Installation"
-description: "Connect Semoia to your AI tools"
+title: "Quickstart"
+description: "Connect Semoia to your AI tools in minutes"
 ---
 
 This guide shows you how to connect **Semoia** to your AI tools using the Model Context Protocol (MCP).
 
-<Note>
-  **Semoia** works exclusively as a **Remote Server**, ensuring you don't need to manage local dependencies or processes.
-</Note>
+## Prerequisites
 
-## Quick Install (Recommended)
+Before you start, make sure you have:
+
+1.  **Semoia Account**: Join the beta at the [Semoia Dashboard](https://semobeta.vercel.app/dashboard).
+2.  **API Key**: Copy your key from the [Settings](https://semobeta.vercel.app/api-keys) page.
+3.  **Node.js**: Ensure you have Node.js (18+) installed for the CLI setup.
+
+---
+
+## Quick Setup (Recommended)
+
+The easiest way to configure your AI tools is using our CLI tool. It automatically detects and configures supported clients like Cursor, VS Code, and Claude.
 
 Run this command in your terminal:
+
+<CodeGroup>
+
+```bash npm
+npx @semoia/install-mcp
+```
+
+```bash pnpm
+pnpx @semoia/install-mcp
+```
+
+```bash bun
+bunx @semoia/install-mcp
+```
+
+```bash yarn
+yarn dlx @semoia/install-mcp
+```
+
+</CodeGroup>
+
+---
+
+## Alternative: Shell Script
+
+If you prefer using a shell script or need to target a specific client manually:
 
 ```bash Terminal
 curl -fsSL https://semobeta.vercel.app/scripts/install-mcp.sh | bash
 ```
 
----
-
-## Client Configuration
-
-Choose your coding agent below for detailed configuration instructions.
-
-### Cursor
-
-Go to: **Settings → Cursor Settings → MCP → Add new global MCP server**
-
-In Cursor 1.0 and later, manually edit `~/.cursor/mcp.json`:
-- **macOS**: `~/.cursor/mcp.json`
-- **Windows**: `%APPDATA%\Cursor\mcp.json`
-- **Linux**: `~/.config/cursor/mcp.json`
-
-See [Cursor MCP docs](https://docs.cursor.com/context/model-context-protocol) for more info.
-
-**Remote Server (Recommended):**
-
-```json
-{
-  "mcpServers": {
-    "semoia": {
-      "url": "https://semobeta.vercel.app/mcp",
-      "headers": {
-        "Authorization": "Bearer YOUR_API_KEY"
-      }
-    }
-  }
-}
-```
-
----
-
-### Claude Code
-
-See [Claude Code MCP docs](https://code.claude.com/docs/en/mcp) for more info.
-
-Remote Server (Recommended):
+To target a specific supported client:
 
 ```bash
-# For current project only (default)
-claude mcp add --transport http --header "Authorization: Bearer YOUR_API_KEY" semoia "https://semobeta.vercel.app/mcp"
-
-# For global installation (all projects)
-claude mcp add --transport http --header "Authorization: Bearer YOUR_API_KEY" --scope user semoia "https://semobeta.vercel.app/mcp"
+curl -fsSL https://semobeta.vercel.app/scripts/install-mcp.sh | bash -s -- cursor
 ```
+
+Supported targets: `cursor`, `vscode`, `windsurf`, `claude-code`, `claude-desktop`, `antigravity`, `trae`, `zed`, `boltai`, `gemini`.
 
 ---
 
-### Windsurf
+## What's Next?
 
-Open your Windsurf MCP configuration:
-- **macOS**: `~/.windsurf/mcp.json`
-- **Windows**: `%APPDATA%\Windsurf\mcp.json`
-- **Linux**: `~/.config/windsurf/mcp.json`
+Once installed, your AI agent will have access to new specialized tools:
 
-See [Windsurf MCP docs](https://docs.windsurf.com/windsurf/cascade/mcp) for more info.
+- **Notebooks**: Long-term memory for project details. [Learn more](/features/notebooks)
+- **Jots**: Quick capture for ideas and tasks. [Learn more](/features/jots)
+- **Context Sharing**: Seamlessly move conversations between agents. [Learn more](/features/context-sharing)
 
-**Remote Server (Recommended):**
-
-```json
-{
-  "mcpServers": {
-    "semoia": {
-      "serverUrl": "https://semobeta.vercel.app/mcp",
-      "headers": {
-        "Authorization": "Bearer YOUR_API_KEY"
-      }
-    }
-  }
-}
-```
-
----
-
-### Antigravity
-
-Add this to your Antigravity MCP config file.
-
-**Remote Server (Recommended):**
-
-```json
-{
-  "mcpServers": {
-    "semoia": {
-      "serverUrl": "https://semobeta.vercel.app/mcp",
-      "headers": {
-        "Authorization": "Bearer YOUR_API_KEY"
-      }
-    }
-  }
-}
-```
-
----
-
-### VS Code
-
-Open your VS Code MCP configuration:
-- Run **MCP: Open User Configuration** from the Command Palette
-- Or manually edit:
-  - **macOS/Linux**: `~/.config/Code/User/mcp.json`
-  - **Windows**: `%APPDATA%\Code\User\mcp.json`
-
-See [VS Code MCP docs](https://code.visualstudio.com/docs/copilot/chat/mcp-servers) for more info.
-
-**Remote Server (Recommended):**
-
-```json
-"mcp": {
-  "servers": {
-    "semoia": {
-      "type": "http",
-      "url": "https://semobeta.vercel.app/mcp",
-      "headers": {
-        "Authorization": "Bearer YOUR_API_KEY"
-      }
-    }
-  }
-}
-```
+Manage your memory and API keys at the [Semoia Dashboard](https://semobeta.vercel.app/dashboard).
