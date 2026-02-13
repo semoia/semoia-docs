@@ -22,7 +22,8 @@
             "group": "Introduction",
             "pages": [
               "index",
-              "quickstart"
+              "quickstart",
+              "setup"
             ]
           },
           {
