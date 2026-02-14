@@ -11,7 +11,6 @@ Open your VS Code MCP configuration:
 
 See [VS Code MCP docs](https://code.visualstudio.com/docs/copilot/chat/mcp-servers) for more info.
 
-**Remote Server (Recommended):**
 
 ```json
 "mcp": {
@@ -21,23 +20,6 @@ See [VS Code MCP docs](https://code.visualstudio.com/docs/copilot/chat/mcp-serve
       "url": "https://semobeta.vercel.app/mcp",
       "headers": {
         "Authorization": "Bearer YOUR_API_KEY"
-      }
-    }
-  }
-}
-```
-
-**Local Server (Proxy Bridge):**
-
-```json
-"mcp": {
-  "servers": {
-    "semoia": {
-      "type": "command",
-      "command": "npx",
-      "args": ["-y", "@semoia/mcp"],
-      "env": {
-        "SEMOIA_API_KEY": "YOUR_API_KEY"
       }
     }
   }

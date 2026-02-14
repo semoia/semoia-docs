@@ -10,7 +10,6 @@ Open your Windsurf MCP configuration:
 
 See [Windsurf MCP docs](https://docs.windsurf.com/windsurf/cascade/mcp) for more info.
 
-**Remote Server (Recommended):**
 
 ```json
 {
@@ -19,21 +18,6 @@ See [Windsurf MCP docs](https://docs.windsurf.com/windsurf/cascade/mcp) for more
       "serverUrl": "https://semobeta.vercel.app/mcp",
       "headers": {
         "Authorization": "Bearer YOUR_API_KEY"
-      }
-    }
-  }
-}
-```
-
-**Local Server (Proxy Bridge):**
-
-```json
-{
-  "mcpServers": {
-    "semoia": {
-      "command": "npx -y @semoia/mcp",
-      "env": {
-        "SEMOIA_API_KEY": "YOUR_API_KEY"
       }
     }
   }

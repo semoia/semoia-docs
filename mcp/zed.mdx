@@ -7,7 +7,6 @@ Open your Zed settings and add the server to the `mcp` section.
 
 See [Zed MCP docs](https://zed.dev/docs/mcp) for more info.
 
-**Remote Server (Recommended):**
 
 ```json
 "mcp": {
@@ -17,23 +16,6 @@ See [Zed MCP docs](https://zed.dev/docs/mcp) for more info.
       "url": "https://semobeta.vercel.app/mcp",
       "headers": {
         "Authorization": "Bearer YOUR_API_KEY"
-      }
-    }
-  }
-}
-```
-
-**Local Server (Proxy Bridge):**
-
-```json
-"mcp": {
-  "servers": {
-    "semoia": {
-      "type": "command",
-      "command": "npx",
-      "args": ["-y", "@semoia/mcp"],
-      "env": {
-        "SEMOIA_API_KEY": "YOUR_API_KEY"
       }
     }
   }

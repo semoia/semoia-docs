@@ -7,7 +7,6 @@ description: "How to configure Manual Configuration for Claude"
 
 See [Claude Code MCP docs](https://code.claude.com/docs/en/mcp) for more info.
 
-**Remote Server (Recommended):**
 
 ```bash
 # For current project only (default)
@@ -15,38 +14,4 @@ claude mcp add --transport http --header "Authorization: Bearer YOUR_API_KEY" se
 
 # For global installation (all projects)
 claude mcp add --transport http --header "Authorization: Bearer YOUR_API_KEY" --scope user semoia "https://semobeta.vercel.app/mcp"
-```
-
-**Local Server (Proxy Bridge):**
-
-```bash
-# For current project only (default)
-claude mcp add semoia -- npx -y @semoia/mcp --env SEMOIA_API_KEY="YOUR_API_KEY"
-
-# For global installation (all projects)
-claude mcp add --scope user semoia -- npx -y @semoia/mcp --env SEMOIA_API_KEY="YOUR_API_KEY"
-```
-
----
-
-### Claude Desktop
-
-Open your Claude Desktop configuration:
-- **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
-- **Windows**: `%APPDATA%\Claude\claude_desktop_config.json`
-
-**Local Server (Proxy Bridge):**
-
-```json
-{
-  "mcpServers": {
-    "semoia": {
-      "command": "npx",
-      "args": ["-y", "@semoia/mcp"],
-      "env": {
-        "SEMOIA_API_KEY": "YOUR_API_KEY"
-      }
-    }
-  }
-}
 ```
