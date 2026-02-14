@@ -51,6 +51,12 @@
         ]
       },
       {
+        "tab": "Autonomous",
+        "pages": [
+          "autonomous/cli"
+        ]
+      },
+      {
         "tab": "Support",
         "pages": [
           "support",
