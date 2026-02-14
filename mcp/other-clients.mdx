@@ -9,16 +9,16 @@ description: "Manual Configuration for other AI agents"
 
 
 ```json
-{
-  "mcpServers": {
-    "semoia": {
-      "url": "https://semobeta.vercel.app/mcp",
-      "headers": {
-        "Authorization": "Bearer YOUR_API_KEY"
-      }
+"mcpServers": [
+  {
+    "name": "semoia",
+    "url": "https://semobeta.vercel.app/api/mcp",
+    "headers": {
+      "Authorization": "Bearer YOUR_API_KEY",
+      "Origin": "https://semobeta.vercel.app"
     }
   }
-}
+]
 ```
 
 ---
@@ -28,8 +28,10 @@ description: "Manual Configuration for other AI agents"
 - Go to **Settings → MCP**
 - Add a new server with:
   - **Type**: HTTP
-  - **URL**: `https://semobeta.vercel.app/mcp`
-  - **Headers**: `Authorization: Bearer YOUR_API_KEY`
+  - **URL**: `https://semobeta.vercel.app/api/mcp`
+  - **Headers**: 
+    - `Authorization: Bearer YOUR_API_KEY`
+    - `Origin: https://semobeta.vercel.app`
 
 ---
 
@@ -44,9 +46,11 @@ Add to your `mcp_config.json`:
 {
   "mcpServers": {
     "semoia": {
-      "serverUrl": "https://semobeta.vercel.app/mcp",
+      "httpUrl": "https://semobeta.vercel.app/api/mcp",
       "headers": {
-        "Authorization": "Bearer YOUR_API_KEY"
+        "Authorization": "Bearer YOUR_API_KEY",
+        "Origin": "https://semobeta.vercel.app",
+        "Accept": "application/json, text/event-stream"
       }
     }
   }
@@ -66,11 +70,20 @@ Add to your Roo Code MCP configuration:
 {
   "mcpServers": {
     "semoia": {
-      "url": "https://semobeta.vercel.app/mcp",
+      "url": "https://semobeta.vercel.app/api/mcp",
       "headers": {
-        "Authorization": "Bearer YOUR_API_KEY"
+        "Authorization": "Bearer YOUR_API_KEY",
+        "Origin": "https://semobeta.vercel.app"
       }
     }
   }
 }
 ```
+
+---
+
+## Giải Quyết Sự Cố (Troubleshooting)
+
+- **Lỗi 403 (Forbidden):** Đảm bảo đã thêm header `Origin` chính xác là `https://semobeta.vercel.app`.
+- **Lỗi 401 (Unauthorized):** Kiểm tra lại API Key thay cho `YOUR_API_KEY`.
+- **Mất kết nối:** Đảm bảo URL kết thúc bằng `/api/mcp` và không có khoảng trắng.

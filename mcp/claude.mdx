@@ -9,9 +9,34 @@ See [Claude Code MCP docs](https://code.claude.com/docs/en/mcp) for more info.
 
 
 ```bash
-# For current project only (default)
-claude mcp add --transport http --header "Authorization: Bearer YOUR_API_KEY" semoia "https://semobeta.vercel.app/mcp"
-
-# For global installation (all projects)
-claude mcp add --transport http --header "Authorization: Bearer YOUR_API_KEY" --scope user semoia "https://semobeta.vercel.app/mcp"
+claude mcp add semoia https://semobeta.vercel.app/api/mcp --header "Authorization: Bearer YOUR_API_KEY" --header "Origin: https://semobeta.vercel.app"
 ```
+
+---
+
+### Claude Desktop
+
+**macOS:** `~/Library/Application Support/Claude/claude_desktop_config.json`  
+**Windows:** `%APPDATA%\Claude\claude_desktop_config.json`
+
+```json
+{
+  "mcpServers": {
+    "semoia": {
+      "url": "https://semobeta.vercel.app/api/mcp",
+      "headers": {
+        "Authorization": "Bearer YOUR_API_KEY",
+        "Origin": "https://semobeta.vercel.app"
+      }
+    }
+  }
+}
+```
+
+---
+
+## Giải Quyết Sự Cố (Troubleshooting)
+
+- **Lỗi 403 (Forbidden):** Đảm bảo đã thêm header `Origin` chính xác là `https://semobeta.vercel.app`.
+- **Lỗi 401 (Unauthorized):** Kiểm tra lại API Key thay cho `YOUR_API_KEY`.
+- **Mất kết nối:** Đảm bảo URL kết thúc bằng `/api/mcp` và không có khoảng trắng.

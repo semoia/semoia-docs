@@ -9,15 +9,24 @@ See [Zed MCP docs](https://zed.dev/docs/mcp) for more info.
 
 
 ```json
-"mcp": {
-  "servers": {
+{
+  "context_servers": {
     "semoia": {
-      "type": "http",
-      "url": "https://semobeta.vercel.app/mcp",
+      "source": "custom",
+      "url": "https://semobeta.vercel.app/api/mcp",
       "headers": {
-        "Authorization": "Bearer YOUR_API_KEY"
+        "Authorization": "Bearer YOUR_API_KEY",
+        "Origin": "https://semobeta.vercel.app"
       }
     }
   }
 }
 ```
+
+---
+
+## Giải Quyết Sự Cố (Troubleshooting)
+
+- **Lỗi 403 (Forbidden):** Đảm bảo đã thêm header `Origin` chính xác là `https://semobeta.vercel.app`.
+- **Lỗi 401 (Unauthorized):** Kiểm tra lại API Key thay cho `YOUR_API_KEY`.
+- **Mất kết nối:** Đảm bảo URL kết thúc bằng `/api/mcp` và không có khoảng trắng.

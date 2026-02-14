@@ -10,11 +10,21 @@ Add this to your Antigravity MCP config file.
 {
   "mcpServers": {
     "semoia": {
-      "serverUrl": "https://semobeta.vercel.app/mcp",
+      "serverUrl": "https://semobeta.vercel.app/api/mcp",
       "headers": {
-        "Authorization": "Bearer YOUR_API_KEY"
+        "Authorization": "Bearer YOUR_API_KEY",
+        "Origin": "https://semobeta.vercel.app",
+        "Content-Type": "application/json"
       }
     }
   }
 }
 ```
+
+---
+
+## Giải Quyết Sự Cố (Troubleshooting)
+
+- **Lỗi 403 (Forbidden):** Đảm bảo đã thêm header `Origin` chính xác là `https://semobeta.vercel.app`.
+- **Lỗi 401 (Unauthorized):** Kiểm tra lại API Key thay cho `YOUR_API_KEY`.
+- **Mất kết nối:** Đảm bảo URL kết thúc bằng `/api/mcp` và không có khoảng trắng.
