@@ -1,0 +1,21 @@
+---
+title: "Gemini CLI"
+description: "How to configure Manual Configuration for Gemini CLI"
+---
+
+Add this to your `mcp_config.json`:
+
+```json
+{
+  "mcpServers": {
+    "semoia": {
+      "httpUrl": "https://semobeta.vercel.app/api/mcp",
+      "headers": {
+        "Authorization": "Bearer YOUR_API_KEY",
+        "Origin": "https://semobeta.vercel.app",
+        "Accept": "application/json, text/event-stream"
+      }
+    }
+  }
+}
+```

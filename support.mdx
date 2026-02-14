@@ -43,3 +43,25 @@ Check here for the latest news:
     href="https://linkedin.com/company/semoia"
   />
 </CardGroup>
+
+---
+
+## Troubleshooting
+
+If you encounter issues while setting up or using Semoia MCP, check the following common solutions:
+
+### 403 Forbidden
+This usually happens when the mandatory `Origin` header is missing or incorrect.
+- **Solution**: Ensure your configuration includes the header `"Origin": "https://semobeta.vercel.app"`.
+
+### 401 Unauthorized
+This indicates an issue with your API Key.
+- **Solution**: Verify that you are using a valid API Key from your [Dashboard](https://semobeta.vercel.app/api-keys) and that it correctly replaces `YOUR_API_KEY` in the configuration.
+
+### Connection Failures
+The AI client cannot establish a connection to the MCP server.
+- **Solution**: 
+  - Ensure the URL is exactly `https://semobeta.vercel.app/api/mcp`.
+  - Check for any trailing spaces or typos in the URL.
+  - Ensure your internet connection is stable and can reach the domain.
+

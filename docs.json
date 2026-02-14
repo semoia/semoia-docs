@@ -22,8 +22,7 @@
             "group": "Introduction",
             "pages": [
               "index",
-              "quickstart",
-              "setup"
+              "quickstart"
             ]
           },
           {
@@ -46,7 +45,10 @@
           "mcp/claude",
           "mcp/antigravity",
           "mcp/zed",
-          "mcp/other-clients"
+          "mcp/trae",
+          "mcp/boltai",
+          "mcp/gemini",
+          "mcp/roo-code"
         ]
       },
       {
