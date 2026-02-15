@@ -1,0 +1,91 @@
+---
+title: "Customizing Agent Behavior"
+description: "A complete guide to configuring your AI agent's autonomy and memory with Semoia"
+---
+
+Agent Rules are the bridge between your AI's reasoning and Semoia's structured memory. By defining these rules, you control how your agent autonomously records information, searches for context, and maintains project continuity.
+
+---
+
+## Core AI Directives
+
+These are the primary instructions that your agent (you) must follow to interact with Semoia properly. You can copy these directly into your master configuration (e.g., `.cursorrules`).
+
+```markdown
+# Core Memory Directives
+- **Search-First**: You MUST use `search_notebooks` before starting any task or answering complex queries to ground your reasoning in project context.
+- **Cite Sources**: You MUST cite the `Notebook ID` and section header for any information retrieved from memory.
+- **Confirm Before Write**: You must ALWAYS propose a summary of changes and wait for user approval before using `write_notebook`.
+- **Fleeting Memory**: Use `jot` with #hashtags for session-specific thoughts, small tasks, or transient discoveries.
+```
+
+### Tool Usage Protocols
+
+To ensure consistent memory structure, the following protocols govern tool execution:
+
+- **Notebook Writing**: Use ## H2 for major topics and ### H3 for sub-points. Use callouts (`> [!INFO]`) for critical metadata.
+- **Dynamic Searching**: If a direct keyword search fails, you must use semantic search via `search_notebooks` to find relevant meaning.
+- **Checkpointing**: After significant updates, provide a `summary` in `write_notebook` to create a new recovery milestone.
+
+---
+
+## Automation Scenarios
+
+You can extend the core directives with field-specific automation logic. These examples follow an "If-Then" trigger system to help your agent act proactively.
+
+### Software Engineering
+Automate the tracking of technical debt and bug lifecycles.
+
+**Logic**: "If a test fails more than twice with the same error, analyze the root cause and propose a log."
+
+```markdown
+# Rule: Automatic Bug Tracking
+- When a command fails, you must immediately check `# Bugs` in memory for similar patterns.
+- If you resolve a persistent issue, automatically propose an update to the 'Verification' section.
+```
+
+### Scientific Research & Discovery
+Synthesize papers, track experiments, and index discoveries.
+
+**Logic**: "Every time a new paper or technical document is provided, synthesize the findings into the Knowledge Base."
+
+```markdown
+# Rule: Research Indexing
+- If the user provides a URL or document, you must immediately synthesize key patterns and storage requirements.
+- Focus on: [Methodology], [Findings], and [Integration Potential].
+```
+
+### Product Strategy & Growth
+Sync requirements and track the evolution of feature specifications.
+
+**Logic**: "Whenever a feature's scope changes in conversation, draft updated requirements before implementing code."
+
+```markdown
+# Rule: Requirement Evolution
+- When a user changes a feature's goal, you must immediately propose a section update in the 'Product' notebook.
+- Do not modify code until the user confirms the updated spec in the notebook.
+```
+
+### Legal, Compliance & Documentation
+Cross-reference clauses and build a citation-heavy knowledge base.
+
+**Logic**: "If a clause or legal standard is referenced, verify its consistency across all project notebooks."
+
+```markdown
+# Rule: Compliance Guard
+- Every time a regulatory standard is mentioned, you must search for existing compliance sections.
+- Flag any contradictions between new conversation data and stored legal requirements.
+```
+
+---
+
+## Deployment Strategies
+
+You can organize these rules to be as general or as specific as your project requires.
+
+- **Global rules**: Place core directives in your master `.cursorrules` to apply them to every project.
+- **Modular rules**: Use a directory like `.cursor/rules/` to toggle field-specific automation (e.g., `research-rules.md`, `legal-rules.md`) only when active.
+
+<Tip>
+Start with a **Confirm Before Write** policy for all notebooks. As you trust your agent's synthesis quality, move high-frequency tasks (like terminal error logging) to an **Always Record** style by removing the confirmation requirement from those specific rules.
+</Tip>
