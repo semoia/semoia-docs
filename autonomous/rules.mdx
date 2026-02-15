@@ -9,7 +9,9 @@ Agent Rules are the bridge between your AI's reasoning and Semoia's structured m
 
 ## Core AI Directives
 
-These are the primary instructions that your agent (you) must follow to interact with Semoia properly. You can copy these directly into your master configuration (e.g., `.cursorrules`).
+<Tip>
+The following directives are the "Operating System" for your agent's memory. Copy these directly into your master configuration (e.g., `.cursorrules`) at the project root to enable deep integration.
+</Tip>
 
 ```markdown
 # Core Memory Directives
@@ -86,6 +88,11 @@ You can organize these rules to be as general or as specific as your project req
 - **Global rules**: Place core directives in your master `.cursorrules` to apply them to every project.
 - **Modular rules**: Use a directory like `.cursor/rules/` to toggle field-specific automation (e.g., `research-rules.md`, `legal-rules.md`) only when active.
 
-<Tip>
-Start with a **Confirm Before Write** policy for all notebooks. As you trust your agent's synthesis quality, move high-frequency tasks (like terminal error logging) to an **Always Record** style by removing the confirmation requirement from those specific rules.
-</Tip>
+
+
+---
+
+### Ready for a Full Example?
+
+If you want to see all these directives and scenarios combined into a single, production-ready ruleset, explore our comprehensive **[Sample Rules](/autonomous/sample)** for a real-world Python learning journey.
+
