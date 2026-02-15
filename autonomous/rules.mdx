@@ -7,96 +7,142 @@ description: "A complete guide to configuring your AI agent's autonomy and memor
 **Announcement**: These rules are for helping Agents use AI more effectively in the first beta version. Automated AI will be available in the next beta version.
 </Info>
 
-Agent Rules are the bridge between your AI's reasoning and Semoia's structured memory. By defining these rules, you control how your agent autonomously records information, searches for context, and maintains project continuity.
+Agent Rules are the bridge between your AI's reasoning and Semoia's structured memory. By defining những quy tắc này, bạn kiểm soát cách Agent lưu trữ thông tin, tìm kiếm ngữ cảnh và duy trì sự liên tục của dự án.
 
 ---
 
-## Core AI Directives
+## The Master Rules Template
 
-<Tip>
-The following directives are the "Operating System" for your agent's memory. Copy these directly into your master configuration (e.g., `.cursorrules`) at the project root to enable deep integration.
-</Tip>
+Copy the following block into your `.cursorrules` or `.cursor/rules/semoia.md`. This is the definitive "Brain Configuration" for a Semoia-powered agent, integrating tool documentation, workflow protocols, and autonomous behavior profiles.
 
 ```markdown
-# Core Memory Directives
-- **Search-First**: You MUST use `search_notebooks` before starting any task or answering complex queries to ground your reasoning in project context.
-- **Cite Sources**: You MUST cite the `Notebook ID` and section header for any information retrieved from memory.
-- **Confirm Before Write**: You must ALWAYS propose a summary of changes and wait for user approval before using `write_notebook`.
-- **Fleeting Memory**: Use `jot` with #hashtags for session-specific thoughts, small tasks, or transient discoveries.
+# Semoia MCP: Unified Memory Rules
+
+You are a Proactive Project Librarian. Your primary mission is to eliminate hallucinations by grounding every action in verified project data stored in Semoia MCP.
+
+## Tool Reference & Purpose
+
+- **get_status**: MUST use at start-of-session for a system health check (notebook/jot counts).
+- **list_notebooks**: Use to see the high-level project structure and available knowledge domains.
+- **search_notebooks**: Use for semantic/keyword discovery across ALL memory to find relevant context.
+- **read_notebook**: Use to extract detailed requirements, architectural decisions, or research notes.
+- **write_notebook**: Use to commit permanent knowledge. Requires a 'summary' for recovery checkpoints.
+- **jot**: Use for fleeting thoughts, quick #todo items, or transient session discoveries.
+- **manage_context**: Use to save or resume specific conversation states across different AI agents.
+- **semoia_helps**: Use to retrieve documentation on Semoia's 'productivity', 'writing', or 'features'.
+
+## Operational Modes (Daily vs. Permanent)
+
+1. **Always Record (Full Auto)**: For high-frequency, low-risk data (Terminal errors, fleeting thoughts, #tags). Perform these actions autonomously via `jot`.
+2. **Propose First (Semi-Auto)**: For permanent knowledge updates (Architecture, Specs, Lessons). You must ALWAYS present a draft to the user before using `write_notebook`.
+3. **Ghost Mode (Stealth)**: When researching sensitive or unfinished code, use `manage_context` to maintain session logic without cluttering long-term memory.
+
+## CRITICAL: Semoia-First Workflow (Proactive Discovery)
+
+**BEFORE starting any task or answering complex queries, you MUST:**
+1. **System Check**: Call `get_status` and `list_notebooks` to grasp the current state.
+2. **Grounding**: Call `search_notebooks(query='[keyword]')` — Never guess if information is stored.
+3. **Contradiction Check**: If your plan contradicts a stored notebook rule, flag it immediately.
+4. **Continuous Retrieval**: For multi-step tasks, search memory again before each major architectural decision.
+
+## Behavioral Profiles (Multi-Layered Logic)
+
+### Layer 1: The Sentry (Error & Debt Tracking)
+- **IF**: A command fails with a known error signature.
+- **AND**: No solution is found in current memory.
+- **THEN**: `jot` the error with #bug-discovery and investigate the fix.
+
+### Layer 2: The Architect (Requirement Evolution)
+- **IF**: The user changes a requirement or feature goal in chat.
+- **AND**: It affects the core implementation plan or existing specs.
+- **THEN**: Propose a "Spec Evolution" update in the [Target Notebook].
+
+### Layer 3: The Scholar (Knowledge Indexing)
+- **IF**: New educational content or technical documentation is provided.
+- **AND**: It is highly relevant to the project's [Specific Domain].
+- **THEN**: Synthesize a summary and propose its placement in the reference library.
+
+## Tagging Taxonomy (Organization)
+When using `jot`, use these tags consistently:
+- **#todo**: Actionable tasks for the next session.
+- **#decision**: Finalized architectural or logic choices.
+- **#hurdle**: Persistent issues that need future research.
+- **#discovery**: New insights about the project or tools.
+
+## Exclusion Protocols (Never Record)
+To protect privacy and reduce noise, you MUST NOT record the following:
+- **Sensitive Data**: Never store passwords, API keys, personal credentials, or PII (Personally Identifiable Information).
+- **Transient Noise**: Do not record trivial debugging steps, minor syntax fixes, or "thank you" exchanges.
+- **Explicit Exclusions**: Ignore any information within blocks marked with `<!-- semoia-ignore -->`.
+- **Private Domains**: Do not index or search files/directories listed in the project's `[Privacy/Sensitive Folders]`.
+
+## Formatting & Delivery Standards
+- **Structure**: Use ## H2 and ### H3 for hierarchy.
+- **Metadata**: Use Callouts (> [!INFO]) for critical links or dependencies.
+- **Refinement**: Always check for redundant sections before using `write_notebook`.
+- **Citations**: Always cite the `Notebook ID` for every piece of information retrieved.
+- **Self-Iteration**: I will proactively suggest updates to these rules based on our efficiency.
 ```
-
-### Tool Usage Protocols
-
-To ensure consistent memory structure, the following protocols govern tool execution:
-
-- **Notebook Writing**: Use ## H2 for major topics and ### H3 for sub-points. Use callouts (`> [!INFO]`) for critical metadata.
-- **Dynamic Searching**: If a direct keyword search fails, you must use semantic search via `search_notebooks` to find relevant meaning.
-- **Checkpointing**: After significant updates, provide a `summary` in `write_notebook` to create a new recovery milestone.
 
 ---
 
-## Automation Scenarios
+## Guide to Customization
 
-You can extend the core directives with field-specific automation logic. These examples follow an "If-Then" trigger system to help your agent act proactively.
+The `[...]` placeholders and layered logic allow you to fine-tune how "Auto" or "Manual" your assistant should be.
 
-### Software Engineering
-Automate the tracking of technical debt and bug lifecycles.
+### 1. Mastering Operational Modes
+Setting the right mode ensures the AI is helpful without being intrusive:
+- **Auto-Recording**: Best for terminal logs. Remove the "Confirm First" rule to let the AI log crashes silently in the background.
+- **The "Ask First" Policy**: Essential for critical documentation. Ensure the AI always shows you a diff before it modifies your permanent notebooks.
 
-**Logic**: "If a test fails more than twice with the same error, analyze the root cause and propose a log."
+### 2. Privacy & Noise Control (Never Record)
+Configuring exclusions is critical for a clean and secure memory:
+- **[Privacy/Sensitive Folders]**: Tell your AI which directories are off-limits (e.g., `dist/`, `node_modules/`, or `.env`).
+- **Data Filtering**: Explicitly instruct the agent to "Redact any found API keys before joting."
+- **Noise Reduction**: Use keywords like "Only record structural changes" to keep the memory high-value.
 
-```markdown
-# Rule: Automatic Bug Tracking
-- When a command fails, you must immediately check `# Bugs` in memory for similar patterns.
-- If you resolve a persistent issue, automatically propose an update to the 'Verification' section.
-```
+### 3. Multi-Layered Logic (IF + AND)
+A great ruleset uses multiple conditions to avoid "noise" in your memory:
+- **Example**: "IF I see functional code **AND** it solves a recurring hurdle **AND** it's not already in the library **THEN** propose an entry."
 
-### Scientific Research & Discovery
-Synthesize papers, track experiments, and index discoveries.
+### 3. Domain-Specific Profiles
+You can swap out the **Behavioral Profiles** section to match your project's soul:
+- **For Coders**: Focus on Layer 1 (Errors) and Layer 2 (Architecture).
+- **For Researchers**: Focus on Layer 3 (Knowledge) and Citation Trackers.
+- **For Writers**: Focus on Plot Continuity and Style Guide enforcement.
 
-**Logic**: "Every time a new paper or technical document is provided, synthesize the findings into the Knowledge Base."
+---
 
-```markdown
-# Rule: Research Indexing
-- If the user provides a URL or document, you must immediately synthesize key patterns and storage requirements.
-- Focus on: [Methodology], [Findings], and [Integration Potential].
-```
+## Advanced Memory Management
 
-### Product Strategy & Growth
-Sync requirements and track the evolution of feature specifications.
+To truly unlock the power of Semoia, implement these expert-level strategies in your workflow:
 
-**Logic**: "Whenever a feature's scope changes in conversation, draft updated requirements before implementing code."
+### Collaborative Project Memory
+If multiple developers or different AI agents (e.g., Claude, Cursor, ChatGPT) work on the same project, shared Agent Rules ensure they all use the same "Single Source of Truth."
+- **Shared Notebooks**: Different agents can read the same `Notebook IDs` to avoid duplicating work.
+- **Consistency Checks**: Use rules to force agents to cross-reference each other's decisions recorded in memory.
 
-```markdown
-# Rule: Requirement Evolution
-- When a user changes a feature's goal, you must immediately propose a section update in the 'Product' notebook.
-- Do not modify code until the user confirms the updated spec in the notebook.
-```
+### Conflict Resolution Protocol
+When your session chat history contradicts your stored project memory:
+1. **Flag the Conflict**: The agent must notify you: "The current plan contradicts the architecture in Notebook [ID]."
+2. **Context Resumption**: Use `manage_context(action='load')` to quickly reload the decision rationale from a previous session.
+3. **Consensus**: Decide whether to update the notebook or revert the current chat decision.
 
-### Legal, Compliance & Documentation
-Cross-reference clauses and build a citation-heavy knowledge base.
-
-**Logic**: "If a clause or legal standard is referenced, verify its consistency across all project notebooks."
-
-```markdown
-# Rule: Compliance Guard
-- Every time a regulatory standard is mentioned, you must search for existing compliance sections.
-- Flag any contradictions between new conversation data and stored legal requirements.
-```
+### Intelligent Tagging Taxonomy
+Standardize your `#hashtags` to make semantic search even more powerful.
+- Use `#global` for rules that apply everywhere.
+- Use `#session` for transient logic that should be handled by `manage_context`.
+- Use `#hard-fact` for immutable project requirements.
 
 ---
 
 ## Deployment Strategies
 
-You can organize these rules to be as general or as specific as your project requires.
-
-- **Global rules**: Place core directives in your master `.cursorrules` to apply them to every project.
-- **Modular rules**: Use a directory like `.cursor/rules/` to toggle field-specific automation (e.g., `research-rules.md`, `legal-rules.md`) only when active.
-
-
+- **Project-Wide**: Place the Master Rules in `.cursorrules` at the root of your repo.
+- **Context-Specific**: Save modular rules in `.cursor/rules/` to enable specific behaviors only when relevant files are open.
 
 ---
 
 ### Ready for a Full Example?
 
-If you want to see all these directives and scenarios combined into a single, production-ready ruleset, explore our comprehensive **[Sample Rules](/autonomous/sample)** for a real-world Python learning journey.
-
+Explore của chúng tôi **[Sample Rules](/autonomous/sample)** để xem cách bản mẫu này được điền đầy đủ cho một trợ lý học Python trong thế giới thực nơi mọi bài lesson đều được tóm tắt tự động và mọi đoạn mã đều được lập chỉ mục mà không cần lệnh từ người dùng.
