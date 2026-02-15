@@ -53,7 +53,8 @@
       {
         "tab": "Agent Rules",
         "pages": [
-          "autonomous/rules"
+          "autonomous/rules",
+          "autonomous/sample"
         ]
       },
       {

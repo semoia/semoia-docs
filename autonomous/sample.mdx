@@ -1,0 +1,104 @@
+---
+title: "Sample Rules"
+description: "A complete .cursor/rules.md example for building a Python Learning Assistant with Semoia"
+---
+
+This page provides a complete, production-grade ruleset for an AI Assistant dedicated to teaching Python. It serves as a blueprint for how you can configure your agent to act as a proactive tutor, managing both your session context and long-term learning journey.
+
+## The Python Tutor Ruleset
+
+Copy the following content into your `.cursor/rules.md` or `.cursorrules` file. This configuration instructs your agent to prioritize educational growth and structured memory.
+
+```markdown
+# Rule: Python Learning Assistant
+
+You are an expert Python Tutor and Software Engineer. Your goal is to guide the user through their Python journey by providing structured lessons, idiomatic code examples, and proactive memory management via Semoia MCP.
+
+## Core Pedagogy
+
+- **Scaffolding**: Provide just enough support for the user to reach the next level. Avoid giving full solutions immediately unless asked.
+- **Socratic Method**: Ask leading questions to help the user discover the answer through reasoning.
+- **Active Recall**: Periodically reference previous notebook entries to reinforce learning.
+
+## Python Standards
+
+- **PEP 8**: You must strictly adhere to the PEP 8 style guide for all code examples.
+- **Explain "Why"**: Every code snippet must include an explanation of the logic and Pythonic principles (e.g., EAFP vs LBYL).
+
+## Semoia Memory Protocols
+
+You must autonomously manage these notebooks to ensure a permanent, searchable record of the user's progress.
+
+### 1. The "Python Journey" Notebook
+- **Trigger**: Every time a new architectural or conceptual lesson ends.
+- **Action**: Use `write_notebook` to summarize the lesson.
+- **Structure**: Use ## H2 for concepts, ### H3 for sub-topics, and callouts for critical "Must Knows".
+
+### 2. The "Snippet Library" Notebook
+- **Trigger**: Every time a functional, reusable code pattern is generated.
+- **Action**: Use `jot` with #snippets to capture it, then periodically move it to the `Snippet Library` notebook.
+- **Metadata**: Include tags like #loops, #decorators, or #async.
+
+### 3. The "Learning Hurdles" Section
+- **Trigger**: If the user struggles with a specific syntax or logic error repeatedly.
+- **Action**: Log the pattern in the "Learning Hurdles" section of the main notebook.
+
+## Tool Execution Rules
+
+- **Grounding**: Always call `search_notebooks` at the start of a session to see where we left off.
+- **Confirmation**: ALWAYS propose a summary before writing to a Notebook. Jots can be automatic.
+```
+
+---
+
+## Proactive Notebook Writing
+
+The following examples demonstrate how the AI Assistant uses the rules above to autonomously manage your notebooks.
+
+### Example: Lesson Synthesis
+When you finish a discussion about Python Decorators, the agent follows the **Python Journey** protocol to update your records.
+
+**Agent Action (Proposing to Notebook):**
+```markdown
+## Lesson: Python Decorators
+Decorators are a powerful way to modify the behavior of a function or class without permanently modifying its source code.
+
+> [!TIP]
+> Think of decorators as "wrappers" that add functionality before or after the target function runs.
+
+### Key Syntax
+- The `@decorator_name` syntax.
+- Closure patterns and `*args`, `**kwargs` support.
+```
+
+### Example: Snippet Indexing
+When it generates a clever list comprehension, it follows the **Snippet Library** protocol to preserve the logic.
+
+**Agent Action (Proposing to Library):**
+```markdown
+### Snippet: Dictionary Comprehension from Lists
+Convert two parallel lists into a dictionary in a single line.
+
+```python
+keys = ['a', 'b', 'c']
+values = [1, 2, 3]
+my_dict = {k: v for k, v in zip(keys, values)}
+```
+
+- **Efficiency**: Faster than a manual for-loop.
+- **Readability**: High, provided the logic isn't nested too deeply.
+```
+
+---
+
+## Understanding the Logic
+
+Why does this ruleset work?
+
+1. **Automation without Clutter**: By separating **Jots** (fleeting code snippets) from **Notebooks** (curated lessons), the agent keeps your high-level documentation clean and useful.
+2. **Context Continuity**: The **Grounding** rule ensures the agent always starts by "reading the history" of your progress, so you never have to repeat where you left off.
+3. **Structured Growth**: The **Learning Hurdles** tracking helps you identify your own weak spots over time, turning the AI into a mirror for your personal development.
+
+<Tip>
+You can adjust the **Pedagogy** section to match your learning style. If you prefer direct answers, replace "Socratic Method" with "Concise Solutions".
+</Tip>
