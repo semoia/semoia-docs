@@ -9,64 +9,29 @@ Need help or have a question? You can reach us here:
   <Card
     title="Discord Community"
     icon="discord"
-    href="https://discord.gg/semoia"
+    href="https://discord.gg/TrfRuRAkBG"
   >
     Join our Discord server to talk with us and other users.
   </Card>
   <Card
-    title="Email Support"
-    icon="envelope"
-    href="mailto:hi@trysemoia.com"
+    title="GitHub Issues"
+    icon="github"
+    href="https://github.com/eliophan/opennote/issues"
   >
-    Email us if you have any problems.
+    File bugs and feature requests on GitHub.
   </Card>
 </CardGroup>
 
-## Follow Us
-
-Check here for the latest news:
-
-<CardGroup cols={2}>
-  <Card
-    title="X (Twitter)"
-    icon="x-twitter"
-    href="https://x.com/trysemoia"
-  />
-  <Card
-    title="GitHub"
-    icon="github"
-    href="https://github.com/semoia"
-  />
-  <Card
-    title="LinkedIn"
-    icon="linkedin"
-    href="https://www.linkedin.com/company/semoia/"
-  />
-  <Card
-    title="Instagram"
-    icon="instagram"
-    href="https://www.instagram.com/trysemoia/"
-  />
-</CardGroup>
-
----
-
 ## Troubleshooting
 
-If you encounter issues while setting up or using Semoia MCP, check the following common solutions:
+If you encounter issues while setting up or using OpenNote MCP, check the following common solutions:
 
-### 403 Forbidden
-This usually happens when the mandatory `Origin` header is missing or incorrect.
-- **Solution**: Ensure your configuration includes the header `"Origin": "https://beta.trysemoia.com"`.
-
-### 401 Unauthorized
-This indicates an issue with your API Key.
-- **Solution**: Verify that you are using a valid API Key from your [Dashboard](https://beta.trysemoia.com/api-keys) and that it correctly replaces `YOUR_API_KEY` in the configuration.
+### MCP server not responding
+- Ensure OpenNote web is running (`opennote start`).
+- Check the UI at `http://localhost:4812`.
+- Reinstall MCP config with `opennote mcp install`.
 
 ### Connection Failures
 The AI client cannot establish a connection to the MCP server.
-- **Solution**: 
-  - Ensure the URL is exactly `https://beta.trysemoia.com/api/mcp`.
-  - Check for any trailing spaces or typos in the URL.
-  - Ensure your internet connection is stable and can reach the domain.
-
+- Ensure the URL is local and points to your machine.
+- Check for any trailing spaces or typos in the URL.
