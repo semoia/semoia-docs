@@ -1,6 +1,6 @@
 ---
 title: "Gemini CLI"
-description: "How to configure Manual Configuration for Gemini CLI"
+description: "Manual configuration for Gemini CLI"
 ---
 
 Add this to your `mcp_config.json`:
@@ -8,13 +8,9 @@ Add this to your `mcp_config.json`:
 ```json
 {
   "mcpServers": {
-    "semoia": {
-      "httpUrl": "https://beta.trysemoia.com/api/mcp",
-      "headers": {
-        "Authorization": "Bearer YOUR_API_KEY",
-        "Origin": "https://beta.trysemoia.com",
-        "Accept": "application/json, text/event-stream"
-      }
+    "opennote": {
+      "command": "opennote",
+      "args": ["mcp", "run"]
     }
   }
 }
