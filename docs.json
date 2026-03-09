@@ -51,13 +51,6 @@
         ]
       },
       {
-        "tab": "Agent Rules",
-        "pages": [
-          "autonomous/rules",
-          "autonomous/sample"
-        ]
-      },
-      {
         "tab": "Support",
         "pages": [
           "support",
