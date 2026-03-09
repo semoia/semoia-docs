@@ -26,7 +26,6 @@
               "features/available-features",
               "features/notebooks",
               "features/jots",
-              "features/context-sharing",
               "plugins/openclaw",
               "plugins/opencode",
               "plugins/claudecode"
