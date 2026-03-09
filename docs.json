@@ -30,12 +30,7 @@
               "plugins/opencode",
               "plugins/claudecode"
             ]
-          }
-        ]
-      },
-      {
-        "tab": "Manual Configuration",
-        "groups": [
+          },
           {
             "group": "Manual Configuration",
             "pages": [
