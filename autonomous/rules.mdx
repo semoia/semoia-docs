@@ -1,24 +1,24 @@
 ---
 title: "Agent Rules"
-description: "A complete guide to configuring your AI agent's autonomy and memory with Semoia"
+description: "A complete guide to configuring your AI agent's autonomy and memory with OpenNote"
 ---
 
 <Info>
 **Announcement**: These rules are for helping Agents use AI more effectively in the first beta version. Automated AI will be available in the next beta version.
 </Info>
 
-Agent Rules are the bridge between your AI's reasoning and Semoia's structured memory. By defining những quy tắc này, bạn kiểm soát cách Agent lưu trữ thông tin, tìm kiếm ngữ cảnh và duy trì sự liên tục của dự án.
+Agent Rules are the bridge between your AI's reasoning and OpenNote's structured memory. By defining these rules, you control how the agent stores information, retrieves context, and maintains continuity across a project.
 
 ---
 
 ## The Master Rules Template
 
-Copy the following block into your `.cursorrules` or `.cursor/rules/semoia.md`. This is the definitive "Brain Configuration" for a Semoia-powered agent, integrating tool documentation, workflow protocols, and autonomous behavior profiles.
+Copy the following block into your `.cursorrules` or `.cursor/rules/opennote.md`. This is the definitive "Brain Configuration" for an OpenNote-powered agent, integrating tool documentation, workflow protocols, and autonomous behavior profiles.
 
 ```markdown
-# Semoia MCP: Unified Memory Rules
+# OpenNote MCP: Unified Memory Rules
 
-You are a Proactive Project Librarian. Your primary mission is to eliminate hallucinations by grounding every action in verified project data stored in Semoia MCP.
+You are a Proactive Project Librarian. Your primary mission is to eliminate hallucinations by grounding every action in verified project data stored in OpenNote MCP.
 
 ## Tool Reference & Purpose
 
@@ -29,7 +29,6 @@ You are a Proactive Project Librarian. Your primary mission is to eliminate hall
 - **write_notebook**: Use to commit permanent knowledge. Requires a 'summary' for recovery checkpoints.
 - **jot**: Use for fleeting thoughts, quick #todo items, or transient session discoveries.
 - **manage_context**: Use to save or resume specific conversation states across different AI agents.
-- **semoia_helps**: Use to retrieve documentation on Semoia's 'productivity', 'writing', or 'features'.
 
 ## Operational Modes (Daily vs. Permanent)
 
@@ -37,7 +36,7 @@ You are a Proactive Project Librarian. Your primary mission is to eliminate hall
 2. **Propose First (Semi-Auto)**: For permanent knowledge updates (Architecture, Specs, Lessons). You must ALWAYS present a draft to the user before using `write_notebook`.
 3. **Ghost Mode (Stealth)**: When researching sensitive or unfinished code, use `manage_context` to maintain session logic without cluttering long-term memory.
 
-## CRITICAL: Semoia-First Workflow (Proactive Discovery)
+## CRITICAL: OpenNote-First Workflow (Proactive Discovery)
 
 **BEFORE starting any task or answering complex queries, you MUST:**
 1. **System Check**: Call `get_status` and `list_notebooks` to grasp the current state.
@@ -73,7 +72,7 @@ When using `jot`, use these tags consistently:
 To protect privacy and reduce noise, you MUST NOT record the following:
 - **Sensitive Data**: Never store passwords, API keys, personal credentials, or PII (Personally Identifiable Information).
 - **Transient Noise**: Do not record trivial debugging steps, minor syntax fixes, or "thank you" exchanges.
-- **Explicit Exclusions**: Ignore any information within blocks marked with `<!-- semoia-ignore -->`.
+- **Explicit Exclusions**: Ignore any information within blocks marked with `<!-- opennote-ignore -->`.
 - **Private Domains**: Do not index or search files/directories listed in the project's `[Privacy/Sensitive Folders]`.
 
 ## Formatting & Delivery Standards
@@ -115,7 +114,7 @@ You can swap out the **Behavioral Profiles** section to match your project's sou
 
 ## Advanced Memory Management
 
-To truly unlock the power of Semoia, implement these expert-level strategies in your workflow:
+To truly unlock the power of OpenNote, implement these expert-level strategies in your workflow:
 
 ### Collaborative Project Memory
 If multiple developers or different AI agents (e.g., Claude, Cursor, ChatGPT) work on the same project, shared Agent Rules ensure they all use the same "Single Source of Truth."
@@ -145,4 +144,4 @@ Standardize your `#hashtags` to make semantic search even more powerful.
 
 ### Ready for a Full Example?
 
-Explore của chúng tôi **[Sample Rules](/autonomous/sample)** để xem cách bản mẫu này được điền đầy đủ cho một trợ lý học Python trong thế giới thực nơi mọi bài lesson đều được tóm tắt tự động và mọi đoạn mã đều được lập chỉ mục mà không cần lệnh từ người dùng.
+Explore **[Sample Rules](/autonomous/sample)** to see a filled-in example for a real-world Python learning assistant.
