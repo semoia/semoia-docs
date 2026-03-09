@@ -3,7 +3,7 @@
 ## Project Structure & Module Organization
 - `docs.json` is the Mintlify config and navigation source of truth.
 - Top-level MDX pages live in the repo root (for example `index.mdx`, `quickstart.mdx`, `support.mdx`).
-- Sectioned content is grouped in folders: `features/`, `mcp/`, `autonomous/`, `snippets/`, and `user-manual/`.
+- Sectioned content is grouped in folders: `features/`, `mcp/`, `snippets/`, and `user-manual/`.
 - Static assets are in `images/`, `logo/`, and `favicon.svg`.
 
 ## Build, Test, and Development Commands
