@@ -35,17 +35,22 @@
       },
       {
         "tab": "Manual Configuration",
-        "pages": [
-          "mcp/cursor",
-          "mcp/vscode",
-          "mcp/windsurf",
-          "mcp/claude",
-          "mcp/antigravity",
-          "mcp/zed",
-          "mcp/trae",
-          "mcp/boltai",
-          "mcp/gemini",
-          "mcp/roo-code"
+        "groups": [
+          {
+            "group": "Manual Configuration",
+            "pages": [
+              "mcp/cursor",
+              "mcp/vscode",
+              "mcp/windsurf",
+              "mcp/claude",
+              "mcp/antigravity",
+              "mcp/zed",
+              "mcp/trae",
+              "mcp/boltai",
+              "mcp/gemini",
+              "mcp/roo-code"
+            ]
+          }
         ]
       },
       {
