@@ -1,6 +1,6 @@
 ---
 title: "Zed"
-description: "How to configure Manual Configuration for Zed Editor"
+description: "Manual configuration for Zed Editor"
 ---
 
 Open your Zed settings and add the server to the `mcp` section.
@@ -11,13 +11,10 @@ See [Zed MCP docs](https://zed.dev/docs/mcp) for more info.
 ```json
 {
   "context_servers": {
-    "semoia": {
+    "opennote": {
       "source": "custom",
-      "url": "https://beta.trysemoia.com/api/mcp",
-      "headers": {
-        "Authorization": "Bearer YOUR_API_KEY",
-        "Origin": "https://beta.trysemoia.com"
-      }
+      "command": "opennote",
+      "args": ["mcp", "run"]
     }
   }
 }
