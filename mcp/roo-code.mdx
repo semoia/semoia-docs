@@ -1,6 +1,6 @@
 ---
 title: "Roo Code"
-description: "How to configure Manual Configuration for Roo Code"
+description: "Manual configuration for Roo Code"
 ---
 
 Add this to your Roo Code MCP configuration:
@@ -8,12 +8,9 @@ Add this to your Roo Code MCP configuration:
 ```json
 {
   "mcpServers": {
-    "semoia": {
-      "url": "https://beta.trysemoia.com/api/mcp",
-      "headers": {
-        "Authorization": "Bearer YOUR_API_KEY",
-        "Origin": "https://beta.trysemoia.com"
-      }
+    "opennote": {
+      "command": "opennote",
+      "args": ["mcp", "run"]
     }
   }
 }
