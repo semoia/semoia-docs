@@ -27,7 +27,9 @@
               "features/notebooks",
               "features/jots",
               "features/context-sharing",
-              "plugins/openclaw"
+              "plugins/openclaw",
+              "plugins/opencode",
+              "plugins/claudecode"
             ]
           }
         ]
