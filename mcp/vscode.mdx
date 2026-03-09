@@ -11,15 +11,18 @@ Open your VS Code MCP configuration:
 
 See [VS Code MCP docs](https://code.visualstudio.com/docs/copilot/chat/mcp-servers) for more info.
 
+OpenNote runs locally. Ensure `opennote` is installed and available in your PATH.
 
 ```json
-"mcpServers": [
-  {
-    "name": "opennote",
-    "command": "opennote",
-    "args": ["mcp", "run"]
+{
+  "servers": {
+    "opennote": {
+      "type": "stdio",
+      "command": "opennote",
+      "args": ["mcp", "run"]
+    }
   }
-]
+}
 ```
 
 ---
