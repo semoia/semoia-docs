@@ -1,6 +1,6 @@
 ---
 title: "VS Code"
-description: "How to configure Manual Configuration for VS Code"
+description: "Manual configuration for VS Code"
 ---
 
 Open your VS Code MCP configuration:
@@ -15,12 +15,9 @@ See [VS Code MCP docs](https://code.visualstudio.com/docs/copilot/chat/mcp-serve
 ```json
 "mcpServers": [
   {
-    "name": "semoia",
-    "url": "https://beta.trysemoia.com/api/mcp",
-    "headers": {
-      "Authorization": "Bearer YOUR_API_KEY",
-      "Origin": "https://beta.trysemoia.com"
-    }
+    "name": "opennote",
+    "command": "opennote",
+    "args": ["mcp", "run"]
   }
 ]
 ```
