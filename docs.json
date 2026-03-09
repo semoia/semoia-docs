@@ -8,10 +8,6 @@
     "dark": "#000000"
   },
   "favicon": "/favicon.svg",
-  "logo": {
-    "light": "/logo/logo-text.svg",
-    "dark": "/logo/logo-text.svg"
-  },
   "navigation": {
     "tabs": [
       {
